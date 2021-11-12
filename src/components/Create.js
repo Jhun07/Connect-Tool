@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react"; //HERE we import useState Hook so we can add state to our functional components.
-// import Axios from "axios"; //allows us to make GET and POST requests from the browser.
+import Axios from "axios"; //allows us to make GET and POST requests from the browser.
 import "bootstrap/dist/css/bootstrap.min.css";
 
 
@@ -12,25 +12,39 @@ import "react-toastify/dist/ReactToastify.css";
   toast.configure();
 // import { useHistory } from "react-router-dom"; // allows us to access our path / route history.
 
-function View() {
+function Create() {
   // let history = useHistory(); //USE HISTORY  it will DETERMINED OUR PAST PATH.
+  const [InstanceAlias, setInstanceAlias] = useState("");
+  
+  const [IdentityManagementType, setIdentityManagementType] = useState("");
+  const Method ="Create";
 
 
 
   const create =()=>{
-    toast.success("Instance Created Successfully!", {
-        position: toast.POSITION.TOP_CENTER,
-        autoClose: true,
-      });
+    console.log(InstanceAlias)
+    console.log(IdentityManagementType)
+    
+    if(InstanceAlias != "" && IdentityManagementType != ""){
+      Axios.post("https://vcp9rno202.execute-api.us-east-1.amazonaws.com/CreateInstance", {InstanceAlias,IdentityManagementType,Method} )
+      .then((res)=>{
+       
+
+
+
+    // toast.success("Instance Created Successfully!", {
+    //     position: toast.POSITION.TOP_CENTER,
+    //     autoClose: true,
+    //   });
     const ok =()=>{
-        window.location.reload()
-    }
+        window.location.reload();
+    };
    
 
       const CustomToast = (closeToast) => {
         return (
           <div style={{ width: "300px" }}>
-            <p>Instance ID: leave blank muna</p>
+             <p>{res.data}</p>
             <button type="submit" onClick={ok} className="btn ">
               <i className="btn  bi bi-check2" style={{ fontSize: "25px" }}></i>
             </button>
@@ -47,8 +61,15 @@ function View() {
         closeOnClick: false,
         icon: false,
       });
+    })
+      
+  }else{
+    alert("All Field must not be empty!")
+  }
+  
 
-    }
+  
+};
 
   return (
     <>
@@ -62,7 +83,9 @@ function View() {
       <div className="form-group row">
         <label htmlFor="inputPassword" className="col-sm-2 col-form-label" style={{fontSize: "15px"}} >Instance Name &nbsp;➤</label>
         <div className="col-sm-10">
-          <input type="text" className="form-control" id="inputPassword" style={{width:"290px", marginLeft: "-42px"}} />
+          <input type="text" className="form-control" id="inputPassword" style={{width:"290px", marginLeft: "-42px"}}  onChange={(event) => {
+                  setInstanceAlias(event.target.value);
+                }}/>
         </div>
       </div>
 
@@ -71,15 +94,21 @@ function View() {
     <label style={{fontSize: "15px"}} >Identity Management Type &nbsp; ➤ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 
-    <input type="radio" id="saml" name="fav_language" value="SAML"/>&nbsp;&nbsp;
+    <input type="radio" id="saml" name="fav_language" value="SAML" onChange={(event) => {
+                setIdentityManagementType(event.target.value);
+              }}/>&nbsp;&nbsp;
 
     <label for="saml">SAML</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-    <input type="radio" id="saml" name="fav_language" value="ACM"/>&nbsp;&nbsp;
+    <input type="radio" id="saml" name="fav_language" value="ACM"  onChange={(event) => {
+                setIdentityManagementType(event.target.value);
+              }}/>&nbsp;&nbsp;
 
     <label for="saml">Amazon Connect Manage</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-    <input type="radio" id="saml" name="fav_language" value="SAML"/>&nbsp;&nbsp;
+    <input type="radio" id="saml" name="fav_language" value="SAML" onChange={(event) => {
+                setIdentityManagementType(event.target.value);
+              }}/>&nbsp;&nbsp;
 
     <label for="saml">Link to existing directory</label>&nbsp;&nbsp;
 
@@ -93,4 +122,4 @@ function View() {
   );
 }
 
-export default View;
+export default Create;
