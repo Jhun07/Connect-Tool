@@ -1,0 +1,145 @@
+/* 
+for create instance styling
+ */
+ #CustomToast{
+    width: 300px;
+}
+#CheckI{
+    font-size: 25px ;
+}
+#CreateButton{
+    margin-left : 5px;;
+}
+#UpdateButton{
+    margin-left:20px;
+}
+#InstanceNameLabel{
+    font-size: 15px;
+    margin-left: 5px;
+}
+#inputInstanceName{
+    width:290px;
+    margin-left:10px;
+}
+#IMType{
+    font-size: 15px;
+    margin-left: 5px;
+}
+#CreateIntanceButton{
+    margin-left:5px;
+}
+#description{
+    width: 18rem;
+    position:absolute;
+    right:0;
+    top:85px
+}
+.container{
+    position: relative;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+for update instance styling
+ */
+ #updateInstanceBtn{
+     margin-left:20px;
+ }
+#InstanceID{
+    width: 300px; 
+}
+#InstanceIdBtn{
+    font-size: 25px;
+}
+#CreateInstanceBtn{
+    margin-left:10px;
+}
+#cardInstanceApproved{
+    width: 60%;
+}
+#inputInstance{
+    width: 50%;
+    font-size: 12px
+}
+#inputInstanceField{
+    width: 50%;
+    margin-left: 38px;
+    margin-top: 13px;
+}
+.UpApprovedOrigin{
+font-size: 12px;
+ margin-top: 15px;
+}
+#exampleFormControlTextarea1{
+    width: 50%;
+    margin-left: 38px;
+    height: 200px
+}
+
+.boldTxt{
+    font-Weight: bold;
+    margin-Left: 15px; 
+}
+#callRecordingTxt{
+    margin-Left: 15px;
+}
+.CardName{
+    width: 60%;
+}
+.label1{
+    font-size: 12px;
+     margin-Left: 15px; 
+}
+.input1{
+    width: 50%;
+     margin-Left: 165px;
+     margin-Top: -30px;
+}
+.title{
+    margin-left: 15px;;
+}
+.AlbTxt{
+    margin-left: 100px;
+}
+.textArea1{
+    margin-Left: 50px;
+    width: 250px;
+    height: 200px;   
+}
+.textArea2{
+    margin-Left: 60px;
+    width: 250px;
+    height: 200px;   
+}
+.AlfTxt{
+    margin-left: 85px;
+}
+.column1{
+    margin-left: 290px;
+    margin-top: -225px;
+}
+.updateBtn{
+    margin-right: 10px;
+}

@@ -2,9 +2,9 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import { BrowserRouter as Router, Route, Link } from "react-router-dom"; //routes
-import Update from "./components/Update";
+import Update from "./components/UpdateInstance";
 
-import View from "./components/Create";
+import View from "./components/CreateInstance";
 
 
 ///SIDEBAR
