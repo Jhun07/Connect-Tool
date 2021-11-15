@@ -1,54 +1,215 @@
+
 import React from 'react'
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.min.js";
 
-//IMPORT FOR THE TOASTIFY
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-//CONFIGURING TOASTIFY
-toast.configure();
+import Axios from "axios"; //allows us to make GET and POST requests from the browser.
+import { useState } from "react"; //HERE we import useState Hook so we can add state to our functional components.
 
-const save = () => {
-    toast.success("Instance Updated Successfully!", {
-        position: toast.POSITION.TOP_CENTER,
-        autoClose: true,
-    });
-    const ok = () => {
-        window.location.reload()
+//IMPORT FOR THE SWAL
+
+
+  import Swal from "sweetalert2";
+
+
+ 
+
+ 
+
+     
+    
+
+function Update() {
+    const [InstanceAlias, setInstanceAlias] = useState("");
+    const [Origin, setOrigin] = useState("");
+    const Method ="Update";
+
+   ///CALL RECORDINGS
+    const [clBucket, setClBucket] = useState("uap-dev-call-recordings");
+    const [clPrefix, setClPrefix] = useState("DELETE");
+    const [clKMSKeyARN, setClKMSKeyARN] = useState("arn:aws:kms:us-east-1:966145658840:key/8692921d-d3e4-4887-86d1-da74e43d0751");
+
+    ///CHAT_TRANSCRIPTS
+    const [ctBucket, setCtBucket] = useState("uap-dev-chat-transcripts");
+    const [ctPrefix, setCtPrefix] = useState("ChatTranscripts");
+    const [ctKMSKeyARN, setCtKMSKeyARN] = useState("arn:aws:kms:us-east-1:966145658840:key/8692921d-d3e4-4887-86d1-da74e43d0751");
+
+    ///MEDIA_STREAMS
+    const [msPrefix, setMsPrefix] = useState("uap-dev-streams");
+    const [msKMSKeyId, setMsKMSKeyId] = useState("825ef77b-6174-4dd8-83dc-d9adbc20146c");
+
+    ///SCHEDULED_REPORTS
+    const [srBucket, setSrBucket] = useState("uap-dev-reports");
+    const [srPrefix, setSrPrefix] = useState("Reports");
+    const [srKMSKeyARN, setSrKMSKeyARN] = useState("arn:aws:kms:us-east-1:966145658840:key/8692921d-d3e4-4887-86d1-da74e43d0751");
+
+    ///CONTACT_TRACE_RECORDS
+    const [ctrStreamArn, setCtrStreamArn] = useState("arn:aws:kinesis:us-east-1:966145658840:stream/UAP-DEV-Kinesis-CTR");
+
+    ///LEX BOTS
+    const [lexBots, setLexBots] = useState("UAP_DEV_CCP_Bot");
+
+    ///AWS LAMBDA
+    const [Lambda, setLambda] = useState("arn:aws:lambda:us-east-1:966145658840:function:UAP-DEV-updateAgentDB");
+
+
+
+
+
+
+function save() {
+
+
+
+        
+    if(InstanceAlias !== "" && Origin !== ""  && clBucket !== "" && clPrefix !== "" && clKMSKeyARN !== ""
+        
+    && ctBucket !== ""  && ctPrefix !== "" && ctKMSKeyARN !== "" && msPrefix !== "" && msKMSKeyId !== ""
+
+    && srBucket !== ""  && srPrefix !== "" && srKMSKeyARN !== "" && ctrStreamArn !== "" && lexBots !== ""
+    && Lambda !== "")
+    
+    {
+      Axios.put("https://vcp9rno202.execute-api.us-east-1.amazonaws.com/UpdateInstance", {InstanceAlias,Method,Origin, lexBots, Lambda,
+     
+      "CALL_RECORDINGS":{
+        "BucketName":clBucket,
+        "Prefix": clPrefix,
+        "KMSKeyARN": clKMSKeyARN
+      },
+
+
+      "CHAT_TRANSCRIPTS":{
+        "BucketName": ctBucket,
+        "Prefix": ctPrefix,          
+        "KMSKeyARN": ctKMSKeyARN
+      },
+    
+      "MEDIA_STREAMS": {
+        "Prefix": msPrefix,        
+        "KMSKeyId": msKMSKeyId     
+      },
+     
+      "SCHEDULED_REPORTS": {
+        "BucketName":srBucket , 
+        "Prefix": srPrefix,    
+        "KMSKeyARN": srKMSKeyARN
+      },
+     
+      "CONTACT_TRACE_RECORDS_StreamArn": {
+
+        "StreamArn": ctrStreamArn
+    
+      }
+
+
     }
+  
+    )
+      .then((res)=>{
+     
+        const idx = 0; // add the index for which you want value
+        var key = Object.keys(res.data)[idx];
+        const value = res.data[key]
+        const instanceDisplay=(key,value); // key2 value2
+
+        const idx1 = 1; // add the index for which you want value
+        var key1 = Object.keys(res.data)[idx1];
+        const value1 = res.data[key1]
+        const dataStorage=(key1,value1); // key2 value2
+        console.log(dataStorage)
+
+        
+        const idx2 = 2; // add the index for which you want value
+        var key2 = Object.keys(res.data)[idx2];
+        const value2 = res.data[key2]
+        const Origin=(key2,value2); // key2 value2
+        console.log(Origin)
+      
+
+        const idx3 = 3; // add the index for which you want value
+        var key3 = Object.keys(res.data)[idx3];
+        const value3 = res.data[key3]
+        const Lex=(key3,value3); // key2 value2
+        console.log(Lex)
+       
+
+        const idx4 = 4; // add the index for which you want value
+        var key4 = Object.keys(res.data)[idx4];
+        const value4 = res.data[key4]
+        const Lambda=(key4,value4); // key2 value2
+        console.log(Lambda)
+       
+        console.log(res.data)
+
+       
+        
+     
+       
 
 
-    const CustomToast = (closeToast) => {
-        return (
-            <div id="InstanceID">
-                <p >Instance ID: leave blank muna</p>
-                <button type="submit" onClick={ok} className="btn ">
-                    <i className="btn  bi bi-check2" id="InstanceIdBtn"></i>
-                </button>
 
+        Swal.fire({
+          title: 'Your instance is successfully Updated.',
+           html: `
+           Instance ID: ${instanceDisplay}
+           <br>
+           Data Storage
+           <br>
+           Call Record: ${dataStorage.CallRecord}
+           <br>
+           Chat Transcripts: ${dataStorage.ChatTranscripts}
+           <br>
+           MediaStream: ${dataStorage.MediaStream}
+           <br>
+           Reports: ${dataStorage.Reports}
+           <br>
+           CTR: ${dataStorage.CTR}
+           <br>
+           Origin: ${Origin}
+           <br>
+           Lex: ${Lex}
+           <br>
+           Lambda: ${Lambda}
+           
 
-            </div>
-        );
-    };
+           
+           ` 
+           
+           
+           
+           
+           
+           
+           
+           
+           
+           ,  
+          icon: 'success',
+          confirmButtonColor: '#3085d6',
+          confirmButtonText: 'Okay'
+        })
 
-    ///--------------------------------
-    toast.info(<CustomToast />, {
-        position: toast.POSITION.TOP_CENTER,
-        autoClose: false,
-        closeOnClick: false,
-        icon: false,
-    });
+      })
+      
+    }else{
+      console.log(msPrefix)
+      Swal.fire({
+        title: 'Required',
+        text: "All Field must not be empty!",
+        icon: 'warning',
+        confirmButtonColor: '#3085d6',
+        confirmButtonText: 'Okay'
+      })
+    }
+    
 
 }
 
 
 
 
-
-
-
-function Update() {
     return (
         <div className="container">
 
@@ -75,14 +236,17 @@ function Update() {
                         <div className="form-group row" >
                             <label htmlFor="inputInstance" className="col-sm-2 col-form-label" id="InstanceLabel">Instance Name &nbsp; ➤</label>
                             <div className="col-sm-10">
-                                <input type="text" className="form-control" id="inputInstanceField" />
+                                <input type="text" className="form-control" id="inputInstanceField" onChange={(event) => {
+                  setInstanceAlias(event.target.value)}} />
                             </div>
                         </div>
                         <div className="form-group row">
                             <label htmlFor="inputPassword" className="col-sm-2 col-form-label UpApprovedOrigin" >Approved Origin &nbsp; ➤</label>
                             <div className="col-sm-10">
                                 <br></br>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" ></textarea>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" onChange={(event) => {
+                  setOrigin(event.target.value);
+                }} ></textarea>
                             </div>
                         </div>
                     </form>
@@ -90,7 +254,7 @@ function Update() {
             </div>
             <br></br>
 
-            <div className="card cardName">
+            <div className="card cardName" id="card">
                 <br />
                 <h5 className="boldTxt">Data Storage</h5>
                 <div className="row">
@@ -101,7 +265,9 @@ function Update() {
                             <div className="form-group row" >
                                 <div className="col-sm-10">
                            <label className="label1">S3 Bucket Name &nbsp; ➤</label>
-                                    <input type="text" className="form-control input1"/>
+                                    <input  onChange={(event) => {
+                  setClBucket(event.target.value);
+                }} type="text" className="form-control input1"/>
                                 </div>
                             </div>
                             <br></br>
@@ -109,7 +275,9 @@ function Update() {
 
                                 <div className="col-sm-10">
                                     <label className="label1" >Prefix &nbsp; ➤</label>
-                                    <input type="text" className="form-control input1" />
+                                    <input   onChange={(event) => {
+                            setClPrefix(event.target.value);
+                          }} type="text" className="form-control input1" />
                                 </div>
                             </div>
                             <br></br>
@@ -117,7 +285,9 @@ function Update() {
 
                                 <div className="col-sm-10">
                                     <label className="label1">KMS Key ARN &nbsp; ➤</label>
-                                    <input type="text" className="form-control input1"/>
+                                    <input onChange={(event) => {
+                            setClKMSKeyARN(event.target.value);
+                          }} type="text" className="form-control input1"/>
                                 </div>
                             </div>
                         </div>
@@ -133,7 +303,9 @@ function Update() {
 
                                 <div className="col-sm-10">
                                     <label className="label1">S3 Bucket Name &nbsp; ➤</label>
-                                    <input type="text" className="form-control input1" />
+                                    <input   onChange={(event) => {
+                            setSrBucket(event.target.value);
+                          }}  type="text" className="form-control input1" />
                                 </div>
                             </div>
                             <br></br>
@@ -141,7 +313,9 @@ function Update() {
 
                                 <div className="col-sm-10">
                                     <label className="label1">Prefix &nbsp; ➤</label>
-                                    <input type="text" className="form-control input1" />
+                                    <input onChange={(event) => {
+                            setSrPrefix(event.target.value);
+                          }} type="text" className="form-control input1" />
                                 </div>
                             </div>
                             <br></br>
@@ -149,7 +323,10 @@ function Update() {
 
                                 <div className="col-sm-10">
                                     <label className="label1">KMS Key ARN &nbsp;➤</label>
-                                    <input type="text" className="form-control input1"/>
+                                    <input  onChange={(event) => {
+                            setSrKMSKeyARN(event.target.value);
+                          }}
+                         type="text" className="form-control input1"/>
                                 </div>
                             </div><br />
                         </div>
@@ -159,7 +336,7 @@ function Update() {
             </div>
 
             <br></br>
-            <div className="card cardName" >
+            <div className="card cardName" id="card" >
                 <div className="row">
                     <div className="column">
                         <div className="card-sm-6">
@@ -169,7 +346,9 @@ function Update() {
                             <div className="form-group row" >
                                 <div className="col-sm-10">
                                     <label className="label1" >S3 Bucket Name &nbsp;➤</label>
-                                    <input type="text" className="form-control input1"/>
+                                    <input onChange={(event) => {
+                            setCtBucket(event.target.value);
+                          }} type="text" className="form-control input1"/>
                                 </div>
                             </div>
                             <br></br>
@@ -177,7 +356,9 @@ function Update() {
 
                                 <div className="col-sm-10">
                                     <label className="label1" >Prefix &nbsp;➤</label>
-                                    <input type="text" className="form-control input1"/>
+                                    <input   onChange={(event) => {
+                            setCtPrefix(event.target.value);
+                          }} type="text" className="form-control input1"/>
                                 </div>
                             </div>
                             <br></br>
@@ -185,7 +366,9 @@ function Update() {
 
                                 <div className="col-sm-10">
                                     <label className="label1" >KMS Key ARN &nbsp; ➤</label>
-                                    <input type="text" className="form-control input1" />
+                                    <input onChange={(event) => {
+                            setCtKMSKeyARN(event.target.value);
+                          }} type="text" className="form-control input1" />
                                 </div>
                             </div>
                         </div>
@@ -201,7 +384,9 @@ function Update() {
 
                                 <div className="col-sm-10">
                                     <label className="label1">Prefix &nbsp; ➤</label>
-                                    <input type="text" className="form-control input1"/>
+                                    <input onChange={(event) => {
+                            setMsPrefix(event.target.value);
+                          }} type="text" className="form-control input1"/>
                                 </div>
                             </div>
                             <br></br>
@@ -209,7 +394,9 @@ function Update() {
 
                                 <div className="col-sm-10">
                                     <label className="label1">KMS Key ID &nbsp; ➤</label>
-                                    <input type="text" className="form-control input1" />
+                                    <input onChange={(event) => {
+                            setMsKMSKeyId(event.target.value);
+                          }} type="text" className="form-control input1" />
                                 </div>
                             </div><br />
                         </div>
@@ -218,7 +405,7 @@ function Update() {
 
             </div>
             <br></br>
-            <div className="card cardName">
+            <div className="card cardName" id="card">
                 <br /> 
                 <h5 className="boldTxt"> Data Streaming</h5>
                 <div className="row">
@@ -230,7 +417,9 @@ function Update() {
 
                                 <div className="col-sm-10">
                                     <label className="label1" >Kinesis Stream ARN &nbsp; ➤</label>
-                                    <input type="text" className="form-control input1"/>
+                                    <input  onChange={(event) => {
+                            setCtrStreamArn(event.target.value);
+                          }} type="text" className="form-control input1"/>
                                 </div>
                             </div><br />
                         </div>
@@ -239,7 +428,7 @@ function Update() {
 
             </div>
             <br></br>
-            <div className="card cardName">
+            <div className="card cardName" id="card">
                 <br />
                 <h5 className="boldTxt">Resources</h5>
                 <div className="row">
@@ -247,7 +436,9 @@ function Update() {
                         <div className="card-sm-6">
                             <h7 className="AlbTxt">Amazon Lex Bot</h7>
                             <div className="col-sm-10">
-                                <textarea class="form-control textArea1" rows="3"></textarea>
+                                <textarea  onChange={(event) => {
+                            setLexBots(event.target.value);
+                          }} class="form-control textArea1" rows="3"></textarea>
                             </div>
                         </div>
                     </div>
@@ -255,7 +446,10 @@ function Update() {
                         <div className="card-sm-6">
                             <h7 className="AlfTxt" >Amazon Lambda Function</h7>
                             <div className="col-sm-10">
-                                <textarea class="form-control textArea2" rows="3"></textarea>
+                                <textarea onChange={(event) => {
+                        setLambda(event.target.value);
+                      }}
+                     class="form-control textArea2" rows="3"></textarea>
                             </div>
                         </div>
                         <br />
