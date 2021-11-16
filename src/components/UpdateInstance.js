@@ -152,14 +152,15 @@ function save() {
     return (
         <div className="container">
             <br></br>
-            <a href="/createInstance"> <button type="button" className="btn btn-primary" id="CreateInstanceBtn">Create Instance</button></a>
-            <a href="/updateInstance"><button type="button" className="btn btn-success " id="updateInstanceBtn">Update Instance</button></a>
+            <a href="/createInstance"><button className="custom-btn btn-3"><span>Create Instance</span></button></a>
+            <a href="/updateInstance"> <button className="custom-btn btn-3" id="updatedesign"><span>Update Instance</span></button></a>
+   
             <br></br>
             <br></br>
 
             {/* INPUTS */}
             <div className="card" id="cardInstanceApproved">
-                <div className="card-body" id="Sample" >
+                <div className="card-body card-body1">
                     <form>
 
 
@@ -171,7 +172,7 @@ function save() {
                             </div>
                         </div>
                         <div className="form-group row">
-                            <label htmlFor="inputPassword" className="col-sm-2 col-form-label UpApprovedOrigin" >Approved Origin &nbsp; ➤</label>
+                            <label htmlFor="inputPassword" className="col-sm-2 col-form-label UpApprovedOrigin"  id="InstanceLabel">Approved Origin &nbsp; ➤</label>
                             <div className="col-sm-10">
                                 <br></br>
                                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" onChange={(event) => {
@@ -384,7 +385,8 @@ function save() {
                     </div>
                 </div>
             </div><br />
-            <button type="button" className="btn btn-warning updateBtn"  onClick={save}>Update Instance</button>
+       
+            <button className="custom-btn btn-3" id="updatedesign" onClick={save}><span>Update <i className="bi bi-recycle"></i></span></button>
 
             {/* END INPUTS */}
 
@@ -393,7 +395,7 @@ function save() {
 
             {/* DESCRIPTION */}
             <div className="card" id="description" >
-                <img className="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTT_NqkXOwrvR6fBWhNuDCjPq-CEob8LBitKpCw-EtIyQg9IvWp295f-8a-HIF8F6ERkhg&usqp=CAU" alt="Description Image" />
+                <img className="card-img-top" src="https://logos-world.net/wp-content/uploads/2021/08/Amazon-Web-Services-AWS-Logo.png" alt="Description Image" />
                 <div className="card-body">
                     <h5 className="card-title"><b>Data storage</b></h5>
                     <p className="card-text">Saving Amazon Connect data such as call recordings or scheduled reports requires access to an Amazon S3 bucket.</p>
@@ -415,7 +417,7 @@ function save() {
                 </div>
                 <div className="card-body">
                     <h5 className="card-title"><b>Contact Trace Recordings</b></h5>
-                    <p className="card-text">the primary source of data that Connect collects for every call that occurs within your contact center and are used for reporting and analysis. </p>
+                    <p className="card-text">The primary source of data that Connect collects for every call that occurs within your contact center and are used for reporting and analysis. </p>
                 </div>
             </div>
 

@@ -80,41 +80,54 @@ function Create() {
 
   return (
     <>
-      <div>
-        <br></br>
-        <a href="/createInstance"> <button type="button" className="btn btn-success " id="CreateButton" >Create Instance</button></a>
-        <a href="/updateInstance"><button type="button" className="btn btn-primary " id="UpdateButton">Update Instance</button></a>
-        <br /><br />
-        <form>
+     <div>
+       <br></br>
+       <a href="/createInstance"><button className="custom-btn btn-3"><span>Create Instance</span></button></a>
+            <a href="/updateInstance"> <button className="custom-btn btn-3" id="updatedesign"><span>Update Instance</span></button></a>
+   
+      <br/><br/>
+      <form className="create-form">
 
-          <div className="form-group row">
-            <label htmlFor="inputPassword" className="col-sm-2 col-form-label" id="InstanceNameLabel"  >Instance Name &nbsp;➤</label>
-            <div className="col-sm-6">
-              <input type="text" className="form-control" id="inputInstanceName" onChange={(event) => {
-                setInstanceAlias(event.target.value);
-              }} />
-            </div>
-          </div>
-          <br /><br />
-          <label id="IMType">Identity Management Type &nbsp; ➤ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <input type="radio" id="saml" name="fav_language" value="SAML" onChange={(event) => {
-              setIdentityManagementType(event.target.value);
-            }} />&nbsp;&nbsp;
+      <div className="form-group row">
+        <label htmlFor="inputPassword" className="col-sm-2 col-form-label" id="InstanceNameLabel"  >Instance Name &nbsp;➤</label>
+        <div className="col-sm-6">
+          <input type="text" className="form-control" id="inputInstanceName"  onChange={(event) => {
+                  setInstanceAlias(event.target.value);
+                }}/>
+        </div>
+      </div>
 
-            <label for="saml">SAML</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <br/><br/>
 
-            <input type="radio" id="saml" name="fav_language" value="ACM" onChange={(event) => {
-              setIdentityManagementType(event.target.value);
-            }} />&nbsp;&nbsp;
-            <label for="saml">Amazon Connect Manage</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <input type="radio" id="saml" name="fav_language" value="SAML" onChange={(event) => {
-              setIdentityManagementType(event.target.value);
-            }} />&nbsp;&nbsp;
-            <label for="saml">Link to existing directory</label>&nbsp;&nbsp;
-          </label><br /><br />
-          <button type="button" id="CreateIntanceButton" className="btn btn-primary " onClick={create}>Create Instance</button>
+    <label id="IMType">Identity Management Type &nbsp; ➤ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-        </form>
+
+    <input type="radio" id="saml" name="fav_language" value="SAML" onChange={(event) => {
+                setIdentityManagementType(event.target.value);
+              }}/>&nbsp;&nbsp;
+
+    <label for="saml" className="saml">SAML</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+    <input type="radio" id="saml" name="fav_language" value="ACM"  onChange={(event) => {
+                setIdentityManagementType(event.target.value);
+              }}/>&nbsp;&nbsp;
+
+    <label for="saml">Amazon Connect Manage</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+    <input type="radio" id="saml" name="fav_language" value="SAML" onChange={(event) => {
+                setIdentityManagementType(event.target.value);
+              }}/>&nbsp;&nbsp;
+
+    <label for="saml">Link to existing directory</label>&nbsp;&nbsp;
+
+    </label><br/><br/>
+
+    <button type="button"  id="CreateIntanceButton" className="btn btn-primary custom-btn btn-3 " onClick={create}>
+    <span>Create <i className="bi bi-vector-pen"></i></span></button>
+
+  </form>
+  <div className="extraimg"></div>
+  
       </div>
     </>
   );
