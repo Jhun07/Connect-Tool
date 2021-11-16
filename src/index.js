@@ -134,15 +134,15 @@ function App() {
             </IconButton>
           </DrawerHeader>
           <Divider />
-          <List>
+          <List sx={{backgroundColor: "rgb(63, 144, 190)"}}>
           <a href ="/createInstance">
         <i
           className="btn  bi bi-arrow-counterclockwise"
-          style={{ fontSize: "40px" }}
+          style={{ fontSize: "40px"}}
         ></i></a>
           </List>
           <Divider />
-          <List>
+          <List sx={{backgroundColor: "rgb(63, 144, 190)"}}>
         <a href ="/updateInstance">
         <i
           className="btn  bi bi-arrow-counterclockwise"
@@ -162,9 +162,6 @@ function App() {
            <Route exact path="/" component={Create} />
            <Route exact path="/updateInstance" component={Update} />
            <Route exact path="/createInstance" component={Create} />
-
-
-          
          </Router>
         
         </Box>
