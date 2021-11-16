@@ -100,10 +100,11 @@ function Create() {
     <>
      <div>
        <br></br>
-       <a href="/createInstance"> <button type="button" className="btn btn-success " id="CreateButton" >Create Instance</button></a> 
-      <a href="/updateInstance"><button type="button" className="btn btn-primary " id="UpdateButton">Update Instance</button></a> 
+       <a href="/createInstance"><button className="custom-btn btn-3"><span>Create Instance</span></button></a>
+            <a href="/updateInstance"> <button className="custom-btn btn-3" id="updatedesign"><span>Update Instance</span></button></a>
+   
       <br/><br/>
-      <form>
+      <form className="create-form">
 
       <div className="form-group row">
         <label htmlFor="inputPassword" className="col-sm-2 col-form-label" id="InstanceNameLabel"  >Instance Name &nbsp;➤</label>
@@ -123,7 +124,7 @@ function Create() {
                 setIdentityManagementType(event.target.value);
               }}/>&nbsp;&nbsp;
 
-    <label for="saml">SAML</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <label for="saml" className="saml">SAML</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
     <input type="radio" id="saml" name="fav_language" value="ACM"  onChange={(event) => {
                 setIdentityManagementType(event.target.value);
@@ -139,9 +140,12 @@ function Create() {
 
     </label><br/><br/>
 
-    <button type="button"  id="CreateIntanceButton" className="btn btn-primary " onClick={create}>Create Instance</button>
+    <button type="button"  id="CreateIntanceButton" className="btn btn-primary custom-btn btn-3 " onClick={create}>
+    <span>Create <i className="bi bi-vector-pen"></i></span></button>
 
   </form>
+  <div className="extraimg"></div>
+  
       </div>
     </>
   );

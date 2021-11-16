@@ -123,7 +123,7 @@ function App() {
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" noWrap component="div">
-              AWS CONNECT MANAGEMENT TOOL
+            <img className="aws" src="https://logos-world.net/wp-content/uploads/2021/08/Amazon-Web-Services-AWS-Logo.png" /> CONNECT MANAGEMENT TOOL
             </Typography>
           </Toolbar>
         </AppBar>
