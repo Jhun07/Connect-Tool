@@ -32,7 +32,9 @@ function Create() {
               text: "Instance alias is already used!",
               icon: 'warning',
               confirmButtonColor: 'rgb(0, 212, 255)',
-              confirmButtonText: 'Okay'
+              confirmButtonText: 'Okay',
+              background: 'rgb(0,212,255)',
+              background: 'linear-gradient(90deg, rgba(0,212,255,1) 0%, rgba(255,255,255,1) 35%, rgba(0,212,255,1) 100%)',
             })
             console.log(res.data)
 
@@ -48,7 +50,9 @@ function Create() {
               text: "Instance ID: " + getInstanceIDOnly,
               icon: 'success',
               confirmButtonColor: 'rgb(0, 212, 255)',
-              confirmButtonText: 'Okay'
+              confirmButtonText: 'Okay',
+              background: 'rgb(0,212,255)',
+              background: 'linear-gradient(90deg, rgba(0,212,255,1) 0%, rgba(255,255,255,1) 35%, rgba(0,212,255,1) 100%)',
             })
 
           }
@@ -58,7 +62,9 @@ function Create() {
               text: "Quota limit reached for number of instance!",
               icon: 'warning',
               confirmButtonColor: 'rgb(0, 212, 255)',
-              confirmButtonText: 'Okay'
+              confirmButtonText: 'Okay',
+              background: 'rgb(0,212,255)',
+              background: 'linear-gradient(90deg, rgba(0,212,255,1) 0%, rgba(255,255,255,1) 35%, rgba(0,212,255,1) 100%)',
             })
 
           }
