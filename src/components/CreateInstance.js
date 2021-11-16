@@ -31,7 +31,7 @@ function Create() {
               title: 'Oopss',
               text: "Instance alias is already used!",
               icon: 'warning',
-              confirmButtonColor: '#3085d6',
+              confirmButtonColor: 'rgb(0, 212, 255)',
               confirmButtonText: 'Okay'
             })
             console.log(res.data)
@@ -47,7 +47,7 @@ function Create() {
               title: 'Your instance is successfully created.',
               text: "Instance ID: " + getInstanceIDOnly,
               icon: 'success',
-              confirmButtonColor: '#3085d6',
+              confirmButtonColor: 'rgb(0, 212, 255)',
               confirmButtonText: 'Okay'
             })
 
@@ -57,7 +57,7 @@ function Create() {
               title: 'Limit reached.',
               text: "Quota limit reached for number of instance!",
               icon: 'warning',
-              confirmButtonColor: '#3085d6',
+              confirmButtonColor: 'rgb(0, 212, 255)',
               confirmButtonText: 'Okay'
             })
 
@@ -70,7 +70,7 @@ function Create() {
         title: 'Required',
         html: text,
         icon: 'warning',
-        confirmButtonColor: 'rgb(0,0,205)',
+        confirmButtonColor: 'rgb(0, 212, 255)',
         confirmButtonText: 'Okay',
         background: 'rgb(0,212,255)',
         background: 'linear-gradient(90deg, rgba(0,212,255,1) 0%, rgba(255,255,255,1) 35%, rgba(0,212,255,1) 100%)',

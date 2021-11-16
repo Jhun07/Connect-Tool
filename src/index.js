@@ -134,7 +134,7 @@ function App() {
             </IconButton>
           </DrawerHeader>
           <Divider />
-          <List sx={{backgroundColor: "rgb(63, 144, 190)"}}>
+          <List >
           <a href ="/createInstance">
         <i
           className="btn  bi bi-arrow-counterclockwise"
@@ -142,7 +142,7 @@ function App() {
         ></i></a>
           </List>
           <Divider />
-          <List sx={{backgroundColor: "rgb(63, 144, 190)"}}>
+          <List >
         <a href ="/updateInstance">
         <i
           className="btn  bi bi-arrow-counterclockwise"
