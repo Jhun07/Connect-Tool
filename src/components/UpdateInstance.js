@@ -87,10 +87,10 @@ function save() {
         const idx1 = 1; // add the index for which you want value
         var key1 = Object.keys(res.data)[idx1];
         const value1 = res.data[key1]
-        const response=(key1,value1); // key2 value2
-        const response1 = response.split(":");
-        const dataStorage = response1[1];
-        console.log(dataStorage)
+        const dataStorage=(key1,value1); // key2 value2
+      
+  
+       
 
         
         const idx2 = 2; // add the index for which you want value
@@ -115,46 +115,43 @@ function save() {
        
         console.log(res.data)
        
-        const text = '<b style="color:#0f78a8;font-size: 15px; text-align: left;"> Instance ID: </b>' + `<b style="font-size: 12px;">${instanceDisplay}</b>` +  
-         '<br/>' + '<b style="color:#0f78a8;font-size: 15px; text-align: left;">Call Record: </b>' + `<b style="font-size: 12px;">${dataStorage.CallRecord}</b>` +
-          '<br/>' + '<b style="color:#0f78a8;font-size: 15px; text-align: left;"> Chat Transcripts: </b>' + `<b style="font-size: 12px;">${dataStorage.ChatTranscripts}</b>`+
-          '<br/>' + '<b style="color:#0f78a8;font-size: 15px; text-align: left;"> MediaStream: </b>' + `<b style="font-size: 12px;">${dataStorage.MediaStream}</b>`+
-          '<br/>' + '<b style="color:#0f78a8;font-size: 15px">  Reports: </b>' + `<b style="font-size: 12px;">${dataStorage.Reports}</b>`+
-          '<br/>' + '<b style="color:#0f78a8;font-size: 15px"> CTR: </b>' + `<b style="font-size: 12px;">${dataStorage.CTR}</b>`+
-          '<br/>' + '<b style="color:#0f78a8;font-size: 15px"> Origin: </b>' + `<b style="font-size: 12px;">${Origin}</b>`+
-          '<br/>' + '<b style="color:#0f78a8;font-size: 15px"> Lex </b>' + `<b style="font-size: 12px;">${Lex}</b>`+
-          '<br/>' + '<b style="color:#0f78a8;font-size: 15px"> Lambda:</b>' + `<b style="font-size: 12px;">${Lambda}</b>`;
+        const text = '<b style="color: white ;font-size: 15px; text-align: left;"> Instance ID: </b>' + `<b style="color: black ; font-size: 12px;">${instanceDisplay}</b>` +  
+         '<br/>' + '<b style="color: white ;font-size: 15px; text-align: left;">Call Record: </b>' + `<b style="color: black ; font-size: 12px;">${dataStorage.CallRecord}</b>` +
+          '<br/>' + '<b style="color: white ;font-size: 15px; text-align: left;"> Chat Transcripts: </b>' + `<b style="color: black ; font-size: 12px;">${dataStorage.ChatTranscripts}</b>`+
+          '<br/>' + '<b style="color: white ;font-size: 15px; text-align: left;"> MediaStream: </b>' + `<b style="color: black ; font-size: 12px;">${dataStorage.MediaStream}</b>`+
+          '<br/>' + '<b style="color: white ;font-size: 15px">  Reports: </b>' + `<b style="color: black ; font-size: 12px;">${dataStorage.Reports}</b>`+
+          '<br/>' + '<b style="color: white ;font-size: 15px"> CTR: </b>' + `<b style="color: black ; font-size: 12px;">${dataStorage.CTR}</b>`+
+          '<br/>' + '<b style="color: white ;font-size: 15px"> Origin: </b>' + `<b style="color: black ; font-size: 12px;">${Origin}</b>`+
+          '<br/>' + '<b style="color: white ;font-size: 15px"> Lex </b>' + `<b style="color: black ; font-size: 12px;">${Lex}</b>`+
+          '<br/>' + '<b style="color: white ;font-size: 15px"> Lambda:</b>' + `<b style="color: black ; font-size: 12px;">${Lambda}</b>`;
         
-        const title = '<b style="font-size: 20px;">Your instance is successfully Updated. </b>'
+        const title = '<b style="color: white;font-size: 20px;">Your instance is successfully Updated. </b>'
+        const okay = '<b style="font-color: black;">Okay</b>'
 
         Swal.fire({
           title: title,
            html: text,  
           icon: 'success',
-          confirmButtonColor: '#3085d6',
           confirmButtonText: 'Okay',
-        //   className:"swalBtn",
-          confirmButtonColor: 'rgb(0, 212, 255)',
-          confirmButtonText: 'Okay',
-          background: 'rgba(2, 126, 251, 1);',
-          background: 'linear-gradient(90deg, rgba(0,212,255,1) 0%, rgba(255,255,255,1) 35%, rgba(0,212,255,1) 100%)',
+          confirmButtonColor: '#63b8a7',
+          confirmButtonText: okay,
+          background: '#4686c8',
 
         })
       })
     }else{
-        const text = `<b style="color: rgb(51,51,51); font-size: 13px"> All Field must not be empty! </b>`;
-      
+        const text = `<b style="color: rgb(51,51,51); font-size: 13px"> All fields must not be empty! </b>`;
+        const okay = '<b style="color: white;">Okay</b>'
+        const title = `<b style="color: white"> Required </b>`;
       Swal.fire({
-        title: 'Required',
+        title: title,
         html: text,
         icon: 'warning',
-        confirmButtonColor: '#3085d6',
-        confirmButtonText: 'Okay',
+        confirmButtonColor: '#63b8a7',
         customClass: "Custom_Cancel",
-        confirmButtonColor: 'rgb(0, 212, 255)',
-        confirmButtonText: 'Okay',
-        background: 'rgba(2, 126, 251, 1);',
-        background: 'linear-gradient(90deg, rgba(0,212,255,1) 0%, rgba(255,255,255,2) 35%, rgba(0,212,255,1) 100%)',
+        confirmButtonText: okay,
+        background: '#4686c8',
+
       })
     }
 }
