@@ -26,15 +26,17 @@ function Create() {
         .then((res) => {
 
           if (res.data.includes("already used")) {
+            const okay = '<b style="color: white;">Okay</b>'
+            const title = `<b style="color: white; font-family: Graphik"> Oopss </b>`;
+        
 
             Swal.fire({
-              title: 'Oopss',
-              text: "Instance alias is already used!",
+              title: title,
+              html: `<b style="color: rgb(51,51,51); font-size: 13px"> Instance alias is already used!  </b>`,
               icon: 'warning',
-              confirmButtonColor: 'rgb(0, 212, 255)',
-              confirmButtonText: 'Okay',
-              background: 'rgb(0,212,255)',
-              background: 'linear-gradient(90deg, rgba(0,212,255,1) 0%, rgba(255,255,255,1) 35%, rgba(0,212,255,1) 100%)',  
+              confirmButtonColor: '#63b8a7',
+              confirmButtonText: okay,
+              background: '#4686c8',
             })
             console.log(res.data)
 
@@ -44,12 +46,12 @@ function Create() {
             const getInstanceIDOnly = response[1];
             console.log(getInstanceIDOnly)
             
-            const title = `<b style="color: white"> Your instance is successfully created </b>`; 
+            const title = `<b style="color: white; font-family: Graphik "> Your instance is successfully created </b>`; 
             const okay = '<b style="color: white;">Okay</b>'
 
             Swal.fire({
               title: title,
-              html: `<b style="color: rgb(51,51,51); font-size: 13px"> Instance ID: </b> ${getInstanceIDOnly}` ,
+              html: `<b style="color: black ; font-size: 13px"> Instance ID: </b>`+ `<b style="color: white ; font-size: 13px">${getInstanceIDOnly}</b>` ,
               icon: 'success',
               confirmButtonColor: '#63b8a7',
               confirmButtonText: okay,
@@ -59,8 +61,7 @@ function Create() {
           }
           
           else if (res.data.includes("Quota limit reached")) {
-            const title = `<b style="color: white"> Limit reached. </b>`;
-           
+            const title = `<b style="color: white; font-family: Graphik"> Limit reached. </b>`;
             const okay = '<b style="color: white;">Okay</b>';
             
             Swal.fire({
@@ -77,7 +78,7 @@ function Create() {
     } else {
         const text = `<b style="color: rgb(51,51,51); font-size: 13px"> All fields must not be empty! </b>`;
         const okay = '<b style="color: white;">Okay</b>'
-        const title = `<b style="color: white"> Required </b>`;
+        const title = `<b style="color: white;  font-family: Graphik"> Required </b>`;
       Swal.fire({
         title: title,
         html: text,
