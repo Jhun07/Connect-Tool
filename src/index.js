@@ -123,7 +123,8 @@ function App() {
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" noWrap component="div">
-            <img className="aws" src="https://logos-world.net/wp-content/uploads/2021/08/Amazon-Web-Services-AWS-Logo.png" /> CONNECT MANAGEMENT TOOL
+            <img className="aws" src="https://mti.com/wp-content/uploads/2021/04/Amazon-Web-Services-Logo-White.png" /> 
+            <span className="aws-text"> CONNECT MANAGEMENT TOOL</span>
             </Typography>
           </Toolbar>
         </AppBar>
@@ -137,7 +138,7 @@ function App() {
           <List >
           <a href ="/createInstance">
         <i
-          className="btn  bi bi-arrow-counterclockwise"
+          className="btn sidebaricon bi bi-gear"
           style={{ fontSize: "40px"}}
         ></i></a>
           </List>
@@ -145,8 +146,9 @@ function App() {
           <List >
         <a href ="/updateInstance">
         <i
-          className="btn  bi bi-arrow-counterclockwise"
+          className="btn  sidebaricon bi bi-gear"
           style={{ fontSize: "40px" }}
+       
         ></i></a>
      
           </List>

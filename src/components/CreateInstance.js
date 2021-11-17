@@ -34,7 +34,7 @@ function Create() {
               confirmButtonColor: 'rgb(0, 212, 255)',
               confirmButtonText: 'Okay',
               background: 'rgb(0,212,255)',
-              background: 'linear-gradient(90deg, rgba(0,212,255,1) 0%, rgba(255,255,255,1) 35%, rgba(0,212,255,1) 100%)',
+              background: 'linear-gradient(90deg, rgba(0,212,255,1) 0%, rgba(255,255,255,1) 35%, rgba(0,212,255,1) 100%)',  
             })
             console.log(res.data)
 
@@ -129,7 +129,7 @@ function Create() {
     </label><br/><br/>
 
     <button type="button"  id="CreateIntanceButton" className="btn btn-primary custom-btn btn-3 " onClick={create}>
-    <span>Create <i className="bi bi-vector-pen"></i></span></button>
+    <span>Create</span></button>
 
   </form>
   <div className="extraimg"></div>

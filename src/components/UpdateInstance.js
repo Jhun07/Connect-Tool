@@ -87,7 +87,9 @@ function save() {
         const idx1 = 1; // add the index for which you want value
         var key1 = Object.keys(res.data)[idx1];
         const value1 = res.data[key1]
-        const dataStorage=(key1,value1); // key2 value2
+        const response=(key1,value1); // key2 value2
+        const response1 = response.split(":");
+        const dataStorage = response1[1];
         console.log(dataStorage)
 
         
