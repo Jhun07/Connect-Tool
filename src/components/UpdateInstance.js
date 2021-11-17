@@ -88,6 +88,11 @@ function save() {
         var key1 = Object.keys(res.data)[idx1];
         const value1 = res.data[key1]
         const dataStorage=(key1,value1); // key2 value2
+
+        
+  
+       
+        // console.log(dataStorage.CallRecord.split(":"))
       
   
        
@@ -115,26 +120,74 @@ function save() {
        
         console.log(res.data)
        
-        const text = '<b style="color: white ;font-size: 15px; text-align: left;"> Instance ID: </b>' + `<b style="color: black ; font-size: 12px;">${instanceDisplay}</b>` +  
-         '<br/>' + '<b style="color: white ;font-size: 15px; text-align: left;">Call Record: </b>' + `<b style="color: black ; font-size: 12px;">${dataStorage.CallRecord}</b>` +
-          '<br/>' + '<b style="color: white ;font-size: 15px; text-align: left;"> Chat Transcripts: </b>' + `<b style="color: black ; font-size: 12px;">${dataStorage.ChatTranscripts}</b>`+
-          '<br/>' + '<b style="color: white ;font-size: 15px; text-align: left;"> MediaStream: </b>' + `<b style="color: black ; font-size: 12px;">${dataStorage.MediaStream}</b>`+
-          '<br/>' + '<b style="color: white ;font-size: 15px">  Reports: </b>' + `<b style="color: black ; font-size: 12px;">${dataStorage.Reports}</b>`+
-          '<br/>' + '<b style="color: white ;font-size: 15px"> CTR: </b>' + `<b style="color: black ; font-size: 12px;">${dataStorage.CTR}</b>`+
-          '<br/>' + '<b style="color: white ;font-size: 15px"> Origin: </b>' + `<b style="color: black ; font-size: 12px;">${Origin}</b>`+
-          '<br/>' + '<b style="color: white ;font-size: 15px"> Lex </b>' + `<b style="color: black ; font-size: 12px;">${Lex}</b>`+
-          '<br/>' + '<b style="color: white ;font-size: 15px"> Lambda:</b>' + `<b style="color: black ; font-size: 12px;">${Lambda}</b>`;
+
+     
         
         const title = '<b style="color: white;font-size: 20px; font-family: Graphik">Your instance is successfully Updated. </b>'
         const okay = '<b style="font-color: white;">Okay</b>'
 
         Swal.fire({
           title: title,
-           html: text,  
+           html:  `<table id="table" border=1>
+       
+           <tbody>
+               <tr>
+                   <td style="width:40px; border: 1px solid black;
+                   text-align:left;color: white; padding-left: 10px"><b>Instance ID➤</b></td>
+                   <td style="width:60%;font-size: 15px; color: black; text-align:left;border: 1px solid black;
+                   ">${instanceDisplay}</td>
+                  
+               </tr>
+
+               <tr>
+               <td style="width:40px; border: 1px solid black;color: white; text-align:left;padding-left: 10px"><b>Call Record➤</b></td>
+               <td style="width:60%;font-size: 13px;color: black;;text-align:left; border: 1px solid black;">${dataStorage.CallRecord}</td>      
+              </tr>
+
+              <tr>
+              <td style="width:40px; text-align:left;color: white; border: 1px solid black;padding-left: 10px"><b>Chat Transcripts➤</b></td>
+              <td style="width:60%;font-size: 13px;color: black;text-align:left; border: 1px solid black;">${dataStorage.ChatTranscripts}</td>      
+             </tr>
+
+              <tr>
+              <td style="width:40px; text-align:left;color: white; border: 1px solid black;padding-left: 10px"><b>MediaStream➤</b></td>
+              <td style="width:60%;font-size: 13px;color: black;text-align:left; border: 1px solid black;">${dataStorage.MediaStream}</td>      
+             </tr>
+
+              <tr>
+              <td style="width:40px; text-align:left;color: white; border: 1px solid black;padding-left: 10px"><b> Reports➤</b></td>
+              <td style="width:60%;font-size: 13px;color: black;text-align:left; border: 1px solid black;">${dataStorage.Reports}</td>      
+             </tr>
+
+              <tr>
+              <td style="width:40px; text-align:left; color: white; border: 1px solid black;padding-left: 10px"><b>CTR➤</b></td>
+              <td style="width:60%;font-size: 13px;color: black;text-align:left; border: 1px solid black;">${dataStorage.CTR}</td>      
+             </tr>
+
+              <tr>
+              <td style="width:40px; text-align:left; color: white;border: 1px solid black;padding-left: 10px"><b>Origin➤</b></td>
+              <td style="width:60%;font-size: 13px;  color: black;text-align:left; border: 1px solid black;">${Origin}</td>      
+             </tr>
+
+              <tr>
+              <td style="width:40px; text-align:left;color: white; border: 1px solid black;padding-left: 10px"><b>Lex➤</b></td>
+              <td style="width:60%;font-size:13px;  color: black;text-align:left; border: 1px solid black;">${Lex}</td>      
+             </tr>
+              <tr>
+              <td style="width:40px; text-align:left;color: white; border: 1px solid black;padding-left: 10px"><b>Lambda➤</b></td>
+              <td style="width:60%;font-size: 13px;color: black;text-align:left; border: 1px solid black;">${Lambda}</td>      
+             </tr>
+
+
+             
+   </tbody>
+   </table>`,  
           icon: 'success',
           confirmButtonColor: '#63b8a7',
           confirmButtonText: okay,
           background: '#4686c8',
+          width: '60%',
+
 
         })
       })
