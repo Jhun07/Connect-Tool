@@ -45,12 +45,11 @@ function Create() {
             console.log(getInstanceIDOnly)
             
             const title = `<b style="color: white"> Your instance is successfully created </b>`; 
-            const text = `<b style="color: rgb(51,51,51); font-size: 13px"> Instance ID: </b>`;
             const okay = '<b style="color: white;">Okay</b>'
 
             Swal.fire({
               title: title,
-              text: text + getInstanceIDOnly,
+              html: `<b style="color: rgb(51,51,51); font-size: 13px"> Instance ID: </b> ${getInstanceIDOnly}` ,
               icon: 'success',
               confirmButtonColor: '#63b8a7',
               confirmButtonText: okay,
@@ -61,12 +60,12 @@ function Create() {
           
           else if (res.data.includes("Quota limit reached")) {
             const title = `<b style="color: white"> Limit reached. </b>`;
-            const text = `<b style="color: rgb(51,51,51); font-size: 13px"> Quota limit reached for number of instance! </b>`;
-            const okay = '<b style="color: white;">Okay</b>'
+           
+            const okay = '<b style="color: white;">Okay</b>';
             
             Swal.fire({
               title: title,
-              text: text,
+              html: `<b style="color: rgb(51,51,51); font-size: 13px"> Quota limit reached for number of instance! </b>`,
               icon: 'warning',
               confirmButtonColor: '#63b8a7',
               confirmButtonText: okay,
