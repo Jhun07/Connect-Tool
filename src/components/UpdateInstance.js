@@ -125,14 +125,13 @@ function save() {
           '<br/>' + '<b style="color: white ;font-size: 15px"> Lex </b>' + `<b style="color: black ; font-size: 12px;">${Lex}</b>`+
           '<br/>' + '<b style="color: white ;font-size: 15px"> Lambda:</b>' + `<b style="color: black ; font-size: 12px;">${Lambda}</b>`;
         
-        const title = '<b style="color: white;font-size: 20px;">Your instance is successfully Updated. </b>'
-        const okay = '<b style="font-color: black;">Okay</b>'
+        const title = '<b style="color: white;font-size: 20px; font-family: Graphik">Your instance is successfully Updated. </b>'
+        const okay = '<b style="font-color: white;">Okay</b>'
 
         Swal.fire({
           title: title,
            html: text,  
           icon: 'success',
-          confirmButtonText: 'Okay',
           confirmButtonColor: '#63b8a7',
           confirmButtonText: okay,
           background: '#4686c8',
@@ -142,7 +141,7 @@ function save() {
     }else{
         const text = `<b style="color: rgb(51,51,51); font-size: 13px"> All fields must not be empty! </b>`;
         const okay = '<b style="color: white;">Okay</b>'
-        const title = `<b style="color: white"> Required </b>`;
+        const title = `<b style="color: white; font-family: Graphik"> Required </b>`;
       Swal.fire({
         title: title,
         html: text,
