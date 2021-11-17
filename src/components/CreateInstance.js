@@ -43,43 +43,50 @@ function Create() {
             const response = res.data.split("*");
             const getInstanceIDOnly = response[1];
             console.log(getInstanceIDOnly)
-
+            
+            const title = `<b style="color: white"> Your instance is successfully created </b>`; 
+            const text = `<b style="color: rgb(51,51,51); font-size: 13px"> Instance ID: </b>`;
+            const okay = '<b style="color: white;">Okay</b>'
 
             Swal.fire({
-              title: 'Your instance is successfully created.',
-              text: "Instance ID: " + getInstanceIDOnly,
+              title: title,
+              text: text + getInstanceIDOnly,
               icon: 'success',
-              confirmButtonColor: 'rgb(0, 212, 255)',
-              confirmButtonText: 'Okay',
-              background: 'rgb(0,212,255)',
-              background: 'linear-gradient(90deg, rgba(0,212,255,1) 0%, rgba(255,255,255,1) 35%, rgba(0,212,255,1) 100%)',
+              confirmButtonColor: '#63b8a7',
+              confirmButtonText: okay,
+              background: '#4686c8',
             })
 
           }
+          
           else if (res.data.includes("Quota limit reached")) {
+            const title = `<b style="color: white"> Limit reached. </b>`;
+            const text = `<b style="color: rgb(51,51,51); font-size: 13px"> Quota limit reached for number of instance! </b>`;
+            const okay = '<b style="color: white;">Okay</b>'
+            
             Swal.fire({
-              title: 'Limit reached.',
-              text: "Quota limit reached for number of instance!",
+              title: title,
+              text: text,
               icon: 'warning',
-              confirmButtonColor: 'rgb(0, 212, 255)',
-              confirmButtonText: 'Okay',
-              background: 'rgb(0,212,255)',
-              background: 'linear-gradient(90deg, rgba(0,212,255,1) 0%, rgba(255,255,255,1) 35%, rgba(0,212,255,1) 100%)',
+              confirmButtonColor: '#63b8a7',
+              confirmButtonText: okay,
+              background: '#4686c8',
             })
 
           }
         })
     } else {
-      const text = `<b style="color:rgb(51,51,51); font-size: 13px"> All Field must not be empty! </b>`;
-      
+        const text = `<b style="color: rgb(51,51,51); font-size: 13px"> All fields must not be empty! </b>`;
+        const okay = '<b style="color: white;">Okay</b>'
+        const title = `<b style="color: white"> Required </b>`;
       Swal.fire({
-        title: 'Required',
+        title: title,
         html: text,
         icon: 'warning',
-        confirmButtonColor: 'rgb(0, 212, 255)',
-        confirmButtonText: 'Okay',
-        background: 'rgb(0,212,255)',
-        background: 'linear-gradient(90deg, rgba(0,212,255,1) 0%, rgba(255,255,255,1) 35%, rgba(0,212,255,1) 100%)',
+        confirmButtonColor: '#63b8a7',
+        customClass: "Custom_Cancel",
+        confirmButtonText: okay,
+        background: '#4686c8',
       })
     }
   };
