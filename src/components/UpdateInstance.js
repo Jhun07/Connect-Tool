@@ -159,7 +159,7 @@ function save() {
     return (
         <div className="container">
             <br></br>
-            <a href="/createInstance"><button className="custom-btn btn-3"><span>Create Instance</span></button></a>
+            <a href="/createInstance"><button className="custom-btn btn-3" id="createdesign"><span>Create Instance</span></button></a>
             <a href="/updateInstance"> <button className="custom-btn btn-3" id="updatedesign"><span>Update Instance</span></button></a>
    
             <br></br>
@@ -393,7 +393,7 @@ function save() {
                 </div>
             </div><br />
        
-            <button className="custom-btn btn-3" id="updatedesign" onClick={save}><span>Update <i className="bi bi-recycle"></i></span></button>
+            <button className="custom-btn btn-3" id="updatedesign2" onClick={save}><span>Update</span></button>
 
             {/* END INPUTS */}
 

@@ -36,6 +36,13 @@ for create instance styling
 
   padding-left: 30px;
 }
+#createdesign {
+  background: #63b8a7 ;
+}
+#createdesign:hover {
+  background: transparent;
+  box-shadow: none;
+}
 
 .extraimg {
   background-image: url("./create.svg");
@@ -162,12 +169,16 @@ for update instance styling
 }
 
 #updatedesign {
-  background: rgb(21, 181, 255);
-  background: linear-gradient(
-    0deg,
-    rgb(17, 179, 255) 0%,
-    rgb(16, 222, 236) 100%
-  );
+  background: #63b8a7 ;
+}
+
+#updatedesign2 {
+  background: #4686c8 ;
+   
+}
+#updatedesign2:hover {
+  background: transparent ;
+   
 }
 #updatedesign:hover {
   background: transparent;
