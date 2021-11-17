@@ -129,16 +129,14 @@ function save() {
           title: title,
            html: text,  
           icon: 'success',
-<<<<<<< HEAD
           confirmButtonColor: '#3085d6',
           confirmButtonText: 'Okay',
         //   className:"swalBtn",
-=======
           confirmButtonColor: 'rgb(0, 212, 255)',
           confirmButtonText: 'Okay',
           background: 'rgba(2, 126, 251, 1);',
           background: 'linear-gradient(90deg, rgba(0,212,255,1) 0%, rgba(255,255,255,1) 35%, rgba(0,212,255,1) 100%)',
->>>>>>> 98631876bc187dd86ba249357a2214cba5be3761
+
         })
       })
     }else{
@@ -148,16 +146,13 @@ function save() {
         title: 'Required',
         html: text,
         icon: 'warning',
-<<<<<<< HEAD
         confirmButtonColor: '#3085d6',
         confirmButtonText: 'Okay',
-        customClass: "Custom_Cancel"
-=======
+        customClass: "Custom_Cancel",
         confirmButtonColor: 'rgb(0, 212, 255)',
         confirmButtonText: 'Okay',
         background: 'rgba(2, 126, 251, 1);',
         background: 'linear-gradient(90deg, rgba(0,212,255,1) 0%, rgba(255,255,255,2) 35%, rgba(0,212,255,1) 100%)',
->>>>>>> 98631876bc187dd86ba249357a2214cba5be3761
       })
     }
 }
