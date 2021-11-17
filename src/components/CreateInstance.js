@@ -34,7 +34,7 @@ function Create() {
               confirmButtonColor: 'rgb(0, 212, 255)',
               confirmButtonText: 'Okay',
               background: 'rgb(0,212,255)',
-              background: 'linear-gradient(90deg, rgba(0,212,255,1) 0%, rgba(255,255,255,1) 35%, rgba(0,212,255,1) 100%)',
+              background: 'linear-gradient(90deg, rgba(0,212,255,1) 0%, rgba(255,255,255,1) 35%, rgba(0,212,255,1) 100%)',  
             })
             console.log(res.data)
 

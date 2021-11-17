@@ -25,8 +25,14 @@ for create instance styling
   font-size: 15px;
   margin-left: 5px;
 }
+
 #CreateIntanceButton {
   margin-left: 5px;
+  background:#4686c8;
+}
+#CreateIntanceButton:hover {
+  background: transparent;
+  box-shadow: none;
 }
 
 .create-form {
@@ -40,11 +46,12 @@ for create instance styling
 .extraimg {
   background-image: url("./create.svg");
   height: 445px;
-  width: 70%;
+  width: 50%;
   background-size: 30em;
   background-repeat: no-repeat;
   margin-top: -230px;
-  margin-left: 265px;
+  margin-left: 590px;
+  
   
 }
 
@@ -97,7 +104,7 @@ for update instance styling
   position: absolute;
   right: 0;
   top: 90px;
-  font-family: Verdana, sans-serif;
+  font-family: 'Norwester', sans-serif;
   
 }
 .container {
@@ -148,7 +155,7 @@ for update instance styling
   color: #fff;
   border-radius: 5px;
   padding: 10px 25px;
-  font-family: Verdana, sans-serif;
+  font-family: 'Norwester', sans-serif;
   font-weight: 100;
   background: transparent;
   cursor: pointer;
@@ -162,12 +169,7 @@ for update instance styling
 }
 
 #updatedesign {
-  background: rgb(21, 181, 255);
-  background: linear-gradient(
-    0deg,
-    rgb(17, 179, 255) 0%,
-    rgb(16, 222, 236) 100%
-  );
+  background: #63b8a7;
 }
 #updatedesign:hover {
   background: transparent;
@@ -183,8 +185,7 @@ for update instance styling
 /* ALL EFFECTS OF THE BUTTONS */
 
 .btn-3 {
-  background: rgb(212, 255, 21);
-  background: linear-gradient(0deg, #fd7e14 0%, rgb(255, 196, 0) 100%);
+  background: #63b8a7;
   width: 130px;
   color: black;
   height: 40px;
@@ -318,13 +319,8 @@ body {
 
   background-attachment: fixed;
   background-size: cover;
-  background: rgb(0, 212, 255);
-  background: linear-gradient(
-    90deg,
-    rgba(0, 212, 255, 1) 0%,
-    rgba(255, 255, 255, 0.5247141092765231) 35%,
-    rgba(0, 212, 255, 1) 100%
-  );
+  background: #ffffff;
+
 }
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css");
 
@@ -338,20 +334,16 @@ h4,
 h5,
 h6,
 h7 {
-  font-family: Verdana, sans-serif;
+  font-family: 'Norwester', sans-serif;
+
 }
 
 /* SIDEBAR */
 .css-11o2879-MuiDrawer-docked .MuiDrawer-paper {
   width: calc(72px + 1px);
 
-  background: rgb(0, 212, 255);
-  background: linear-gradient(
-    90deg,
-    rgba(0, 212, 255, 1) 0%,
-    rgba(255, 255, 255, 0.5247141092765231) 35%,
-    rgba(0, 212, 255, 1) 100%
-  );
+  background: #09427d;
+  
 }
 
 .css-1hsz34s-MuiDrawer-docked .MuiDrawer-paper {
@@ -360,20 +352,23 @@ h7 {
   -webkit-transition: width 225ms cubic-bezier(0.4, 0, 0.6, 1) 0ms;
   transition: width 225ms cubic-bezier(0.4, 0, 0.6, 1) 0ms;
   overflow-x: hidden;
-  background: rgb(212, 255, 21);
-  background: linear-gradient(0deg, #fd7e14 0%, rgb(255, 196, 0) 100%);
+  background:#09427d
 }
 
 .css-1t29gy6-MuiToolbar-root {
   min-height: 64px;
 
-  background: rgb(212, 255, 21);
-  background: linear-gradient(0deg, #fd7e14 0%, rgb(255, 196, 0) 100%);
+  background:#09427d
 }
 
 .aws {
-  width: 5%;
-  font-family: Verdana, sans-serif;
+  width: 8%;
+  color:red
+}
+.aws-text {
+  font-family: 'Norwester', sans-serif;
+  font-size: 30px;                                           
+  
 }
 .card-img-top {
     width: 100%;
@@ -382,4 +377,12 @@ h7 {
     background: linear-gradient(0deg, #fd7e14 0%, rgb(255, 196, 0) 100%);
 }
 
+.sidebaricon{
+  color: #ededed;
+  background-color: #4686c8;
+}
 /* SWAL */
+
+
+/* FOR FONT */
+@import url('http://fonts.cdnfonts.com/css/norwester');
