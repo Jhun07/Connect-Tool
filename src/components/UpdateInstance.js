@@ -165,7 +165,7 @@ function save() {
 
             {/* INPUTS */}
             <div className="card" id="cardInstanceApproved">
-                <div className="card-body card-body1">
+                <div className="card-body card-body1">n
                     <form>
 
 
