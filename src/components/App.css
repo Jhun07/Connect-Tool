@@ -43,16 +43,6 @@ for create instance styling
 
 
 
-
-
-
-
-
-
-
-
-
-
 /* 
 for update instance styling
  */
@@ -150,3 +140,7 @@ body{
     background-attachment: fixed;
     background-size: cover;
 }
+.Custom_Cancel  {
+    background-color: #DD6B55;
+    border-color: #DD6B55;
+ }

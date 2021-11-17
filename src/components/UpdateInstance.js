@@ -188,7 +188,8 @@ function save() {
            ,  
           icon: 'success',
           confirmButtonColor: '#3085d6',
-          confirmButtonText: 'Okay'
+          confirmButtonText: 'Okay',
+        //   className:"swalBtn",
         })
 
       })
@@ -200,7 +201,8 @@ function save() {
         text: "All Field must not be empty!",
         icon: 'warning',
         confirmButtonColor: '#3085d6',
-        confirmButtonText: 'Okay'
+        confirmButtonText: 'Okay',
+        customClass: "Custom_Cancel"
       })
     }
     
