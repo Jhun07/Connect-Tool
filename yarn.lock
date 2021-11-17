@@ -6964,9 +6964,13 @@
     "jest-regex-util" "^26.0.0"
     "jest-snapshot" "^26.6.2"
 
+<<<<<<< HEAD
 "jest-resolve@*", "jest-resolve@26.6.0":
   "integrity" "sha512-tRAz2bwraHufNp+CCmAD8ciyCpXCs1NQxB5EJAmtCFy6BN81loFEGWKzYu26Y62lAJJe4X4jg36Kf+NsQyiStQ=="
   "resolved" "https://registry.npmjs.org/jest-resolve/-/jest-resolve-26.6.0.tgz"
+=======
+"jest-resolve@*":
+>>>>>>> 9a17dbbdb6188d4b1e2b08636a8db9fa6090955e
   "version" "26.6.0"
   dependencies:
     "@jest/types" "^26.6.0"
