@@ -1,45 +1,188 @@
 /* 
 for create instance styling
  */
- #CustomToast{
-    width: 300px;
+#CustomToast {
+  width: 300px;
 }
-#CheckI{
-    font-size: 25px ;
+#CheckI {
+  font-size: 25px;
 }
-#CreateButton{
-    margin-left : 5px;;
+#CreateButton {
+  margin-left: 5px;
 }
-#UpdateButton{
-    margin-left:20px;
+#UpdateButton {
+  margin-left: 20px;
 }
-#InstanceNameLabel{
-    font-size: 15px;
-    margin-left: 5px;
+#InstanceNameLabel {
+  font-size: 15px;
+  margin-left: 5px;
 }
-#inputInstanceName{
-    width:290px;
-    margin-left:10px;
+#inputInstanceName {
+  width: 290px;
+  margin-left: 10px;
 }
-#IMType{
-    font-size: 15px;
-    margin-left: 5px;
+#IMType {
+  font-size: 15px;
+  margin-left: 5px;
 }
-#CreateIntanceButton{
-    margin-left:5px;
+#CreateIntanceButton {
+  margin-left: 5px;
 }
 
+.create-form {
+  padding-top: 40px;
 
+  border-radius: 12px;
 
+  padding-left: 30px;
+}
 
+.extraimg {
+  background-image: url("./create.svg");
+  height: 445px;
+  width: 70%;
+  background-size: 30em;
+  background-repeat: no-repeat;
+  margin-top: -230px;
+  margin-left: 265px;
+  
+}
 
+/* 
+for update instance styling
+ */
+#updateInstanceBtn {
+  margin-left: 20px;
+}
+#InstanceID {
+  width: 300px;
+}
+#InstanceIdBtn {
+  font-size: 25px;
+}
+#CreateInstanceBtn {
+  margin-left: 10px;
+}
+#cardInstanceApproved {
+  width: 60%;
+}
+#inputInstance {
+  width: 50%;
+  font-size: 12px;
+}
+#inputInstanceField {
+  width: 50%;
+  margin-left: 38px;
+  margin-top: 13px;
+}
+.UpApprovedOrigin {
+  font-size: 12px;
+  margin-top: 15px;
+}
+#exampleFormControlTextarea1 {
+  width: 50%;
+  margin-left: 38px;
+  height: 200px;
+}
 
+.boldTxt {
+  font-weight: bold;
+  margin-left: 15px;
+}
+#callRecordingTxt {
+  margin-left: 15px;
+}
+#description {
+  width: 18rem;
+  position: absolute;
+  right: 0;
+  top: 90px;
+  font-family: Verdana, sans-serif;
+  
+}
+.container {
+  position: relative;
+}
+#card {
+  width: 60%;
+}
+.label1 {
+  font-size: 12px;
+  margin-left: 15px;
+}
+.input1 {
+  width: 50%;
+  margin-left: 165px;
+  margin-top: -30px;
+}
+.title {
+  margin-left: 15px;
+}
+.AlbTxt {
+  margin-left: 100px;
+}
+.textArea1 {
+  margin-left: 50px;
+  width: 250px;
+  height: 200px;
+}
+.textArea2 {
+  margin-left: 60px;
+  width: 250px;
+  height: 200px;
+}
+.AlfTxt {
+  margin-left: 85px;
+}
+.column1 {
+  margin-left: 290px;
+  margin-top: -225px;
+}
+.updateBtn {
+  margin-right: 10px;
+}
 
+.custom-btn {
+  width: 130px;
+  height: 40px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: Verdana, sans-serif;
+  font-weight: 100;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  outline: none;
+  font-size: 0.9em;
+}
 
+#updatedesign {
+  background: rgb(21, 181, 255);
+  background: linear-gradient(
+    0deg,
+    rgb(17, 179, 255) 0%,
+    rgb(16, 222, 236) 100%
+  );
+}
+#updatedesign:hover {
+  background: transparent;
+  box-shadow: none;
+}
 
+#InstanceLabel {
+  font-size: 14px;
 
+  margin-top: 12px;
+}
 
+/* ALL EFFECTS OF THE BUTTONS */
 
+<<<<<<< HEAD
 
 
 
@@ -51,89 +194,208 @@ for update instance styling
  }
 #InstanceID{
     width: 300px; 
+=======
+.btn-3 {
+  background: rgb(212, 255, 21);
+  background: linear-gradient(0deg, #fd7e14 0%, rgb(255, 196, 0) 100%);
+  width: 130px;
+  color: black;
+  height: 40px;
+  line-height: 42px;
+  padding: 0;
+  border: none;
 }
-#InstanceIdBtn{
-    font-size: 25px;
+.btn-3 span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
 }
-#CreateInstanceBtn{
-    margin-left:10px;
+.btn-3:before,
+.btn-3:after {
+  position: absolute;
+  content: "";
+  right: 0;
+  top: 0;
+  background: #1976d2;
+  transition: all 0.3s ease;
 }
-#cardInstanceApproved{
-    width: 60%;
+.btn-3:before {
+  height: 0%;
+  width: 2px;
 }
-#inputInstance{
-    width: 50%;
-    font-size: 12px
+.btn-3:after {
+  width: 0%;
+  height: 2px;
 }
-#inputInstanceField{
-    width: 50%;
-    margin-left: 38px;
-    margin-top: 13px;
+.btn-3:hover {
+  background: transparent;
+  box-shadow: none;
+>>>>>>> 98631876bc187dd86ba249357a2214cba5be3761
 }
-.UpApprovedOrigin{
-font-size: 12px;
- margin-top: 15px;
+.btn-3:hover:before {
+  height: 100%;
 }
-#exampleFormControlTextarea1{
-    width: 50%;
-    margin-left: 38px;
-    height: 200px
+.btn-3:hover:after {
+  width: 100%;
+}
+.btn-3 span:hover {
+  color: rgba(2, 126, 251, 1);
+}
+.btn-3 span:before,
+.btn-3 span:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 0;
+  background: rgba(2, 126, 251, 1);
+  transition: all 0.3s ease;
+}
+.btn-3 span:before {
+  width: 2px;
+  height: 0%;
+}
+.btn-3 span:after {
+  width: 0%;
+  height: 2px;
+}
+.btn-3 span:hover:before {
+  height: 100%;
+}
+.btn-3 span:hover:after {
+  width: 100%;
 }
 
-.boldTxt{
-    font-Weight: bold;
-    margin-Left: 15px; 
+.card-body{
+  flex: 1 1 auto;
+  padding: 1rem;
+
+  background: white;
+  
+ 
 }
-#callRecordingTxt{
-    margin-Left: 15px;
+
+.card-body1{
+    background: rgb(0, 212, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 212, 255, 1) 0%,
+    rgba(255, 255, 255, 0.5247141092765231) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );  
 }
-#description{
-    width: 18rem;
-    position:absolute;
-    right:0;
-    top:28px
+#card {
+  background: rgb(0, 212, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 212, 255, 1) 0%,
+    rgba(255, 255, 255, 0.5247141092765231) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
 }
-.container{
-    position: relative;
+/* INPUTS */
+#inputInstanceField {
+  width: 50%;
+  margin-left: 38 px;
+  margin-top: 13 px;
+  background: rgb(212, 255, 21);
+  background: linear-gradient(0deg, #fd7e14 0%, rgb(255, 196, 0) 100%);
+  color: black;
 }
-#card{
-    width: 60%;
+
+#exampleFormControlTextarea1 {
+  width: 50%;
+  margin-left: 38 px;
+  height: 200 px;
+  background: rgb(212, 255, 21);
+  background: linear-gradient(0deg, #fd7e14 0%, rgb(255, 196, 0) 100%);
+  color: black;
 }
-.label1{
-    font-size: 12px;
-     margin-Left: 15px; 
+
+.input1 {
+  width: 50%;
+  margin-left: 165 px;
+  margin-top: -30 px;
+  background: rgb(212, 255, 21);
+  background: linear-gradient(0deg, #fd7e14 0%, rgb(255, 196, 0) 100%);
+  color: black;
 }
-.input1{
-    width: 50%;
-     margin-Left: 165px;
-     margin-Top: -30px;
+textarea.form-control {
+  min-height: calc(1.5 em + 0.75 rem + 2 px);
+  background: rgb(212, 255, 21);
+  background: linear-gradient(0deg, #fd7e14 0%, rgb(255, 196, 0) 100%);
+  color: black;
 }
-.title{
-    margin-left: 15px;;
+
+body {
+  background-color: #ffffff;
+
+  background-attachment: fixed;
+  background-size: cover;
+  background: rgb(0, 212, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 212, 255, 1) 0%,
+    rgba(255, 255, 255, 0.5247141092765231) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
 }
-.AlbTxt{
-    margin-left: 100px;
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css");
+
+label,
+input,
+button,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+h7 {
+  font-family: Verdana, sans-serif;
 }
-.textArea1{
-    margin-Left: 50px;
-    width: 250px;
-    height: 200px;   
+
+/* SIDEBAR */
+.css-11o2879-MuiDrawer-docked .MuiDrawer-paper {
+  width: calc(72px + 1px);
+
+  background: rgb(0, 212, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 212, 255, 1) 0%,
+    rgba(255, 255, 255, 0.5247141092765231) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
 }
-.textArea2{
-    margin-Left: 60px;
-    width: 250px;
-    height: 200px;   
+
+.css-1hsz34s-MuiDrawer-docked .MuiDrawer-paper {
+  width: 150px;
+
+  -webkit-transition: width 225ms cubic-bezier(0.4, 0, 0.6, 1) 0ms;
+  transition: width 225ms cubic-bezier(0.4, 0, 0.6, 1) 0ms;
+  overflow-x: hidden;
+  background: rgb(212, 255, 21);
+  background: linear-gradient(0deg, #fd7e14 0%, rgb(255, 196, 0) 100%);
 }
-.AlfTxt{
-    margin-left: 85px;
+
+.css-1t29gy6-MuiToolbar-root {
+  min-height: 64px;
+
+  background: rgb(212, 255, 21);
+  background: linear-gradient(0deg, #fd7e14 0%, rgb(255, 196, 0) 100%);
 }
-.column1{
-    margin-left: 290px;
-    margin-top: -225px;
+
+.aws {
+  width: 5%;
+  font-family: Verdana, sans-serif;
 }
-.updateBtn{
-    margin-right: 10px;
+.card-img-top {
+    width: 100%;
+
+    background: rgb(212, 255, 21);
+    background: linear-gradient(0deg, #fd7e14 0%, rgb(255, 196, 0) 100%);
 }
+<<<<<<< HEAD
 body{
     background-color: #ffffff;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cdefs%3E%3ClinearGradient id='a' x1='0' x2='0' y1='1' y2='0' gradientTransform='rotate(0,0.5,0.5)'%3E%3Cstop offset='0' stop-color='%230FF'/%3E%3Cstop offset='1' stop-color='%23CF6'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' x1='0' x2='0' y1='0' y2='1' gradientTransform='rotate(203,0.5,0.5)'%3E%3Cstop offset='0' stop-color='%23D0FBFF'/%3E%3Cstop offset='1' stop-color='%233CFEFF'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='%23FFF' fill-opacity='0' stroke-miterlimit='10'%3E%3Cg stroke='url(%23a)' stroke-width='3.3'%3E%3Cpath transform='translate(-77.7 -2.4000000000000004) rotate(-6.9 1409 581) scale(0.91876)' d='M1409 581 1450.35 511 1490 581z'/%3E%3Ccircle stroke-width='1.1' transform='translate(-120 66) rotate(1.7999999999999998 800 450) scale(0.9967299999999999)' cx='500' cy='100' r='40'/%3E%3Cpath transform='translate(1.8000000000000007 -36) scale(0.9967299999999999)' d='M400.86 735.5h-83.73c0-23.12 18.74-41.87 41.87-41.87S400.86 712.38 400.86 735.5z'/%3E%3C/g%3E%3Cg stroke='url(%23b)' stroke-width='1'%3E%3Cpath transform='translate(396 9.600000000000001) rotate(-2.4000000000000004 150 345) scale(1.00492)' d='M149.8 345.2 118.4 389.8 149.8 434.4 181.2 389.8z'/%3E%3Crect stroke-width='2.2' transform='translate(-66 -183) rotate(-21.599999999999994 1089 759)' x='1039' y='709' width='100' height='100'/%3E%3Cpath transform='translate(-194.4 45.6) rotate(-3.6000000000000014 1400 132) scale(0.82)' d='M1426.8 132.4 1405.7 168.8 1363.7 168.8 1342.7 132.4 1363.7 96 1405.7 96z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
@@ -144,3 +406,7 @@ body{
     background-color: #DD6B55;
     border-color: #DD6B55;
  }
+=======
+
+/* SWAL */
+>>>>>>> 98631876bc187dd86ba249357a2214cba5be3761

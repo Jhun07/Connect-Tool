@@ -123,7 +123,7 @@ function App() {
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" noWrap component="div">
-              AWS CONNECT MANAGEMENT TOOL
+            <img className="aws" src="https://logos-world.net/wp-content/uploads/2021/08/Amazon-Web-Services-AWS-Logo.png" /> CONNECT MANAGEMENT TOOL
             </Typography>
           </Toolbar>
         </AppBar>
@@ -134,15 +134,15 @@ function App() {
             </IconButton>
           </DrawerHeader>
           <Divider />
-          <List>
+          <List >
           <a href ="/createInstance">
         <i
           className="btn  bi bi-arrow-counterclockwise"
-          style={{ fontSize: "40px" }}
+          style={{ fontSize: "40px"}}
         ></i></a>
           </List>
           <Divider />
-          <List>
+          <List >
         <a href ="/updateInstance">
         <i
           className="btn  bi bi-arrow-counterclockwise"
@@ -162,9 +162,6 @@ function App() {
            <Route exact path="/" component={Create} />
            <Route exact path="/updateInstance" component={Update} />
            <Route exact path="/createInstance" component={Create} />
-
-
-          
          </Router>
         
         </Box>
