@@ -129,7 +129,7 @@ function Create() {
     </label><br/><br/>
 
     <button type="button"  id="CreateIntanceButton" className="btn btn-primary custom-btn btn-3 " onClick={create}>
-    <span>Create <i className="bi bi-vector-pen"></i></span></button>
+    <span>Create</span></button>
 
   </form>
   <div className="extraimg"></div>
