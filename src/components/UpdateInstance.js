@@ -131,10 +131,14 @@ function save() {
           title: title,
            html: text,  
           icon: 'success',
+          confirmButtonColor: '#3085d6',
+          confirmButtonText: 'Okay',
+        //   className:"swalBtn",
           confirmButtonColor: 'rgb(0, 212, 255)',
           confirmButtonText: 'Okay',
           background: 'rgba(2, 126, 251, 1);',
           background: 'linear-gradient(90deg, rgba(0,212,255,1) 0%, rgba(255,255,255,1) 35%, rgba(0,212,255,1) 100%)',
+
         })
       })
     }else{
@@ -144,6 +148,9 @@ function save() {
         title: 'Required',
         html: text,
         icon: 'warning',
+        confirmButtonColor: '#3085d6',
+        confirmButtonText: 'Okay',
+        customClass: "Custom_Cancel",
         confirmButtonColor: 'rgb(0, 212, 255)',
         confirmButtonText: 'Okay',
         background: 'rgba(2, 126, 251, 1);',
@@ -154,7 +161,7 @@ function save() {
     return (
         <div className="container">
             <br></br>
-            <a href="/createInstance"><button className="custom-btn btn-3"><span>Create Instance</span></button></a>
+            <a href="/createInstance"><button className="custom-btn btn-3" id="createdesign"><span>Create Instance</span></button></a>
             <a href="/updateInstance"> <button className="custom-btn btn-3" id="updatedesign"><span>Update Instance</span></button></a>
    
             <br></br>
@@ -388,7 +395,7 @@ function save() {
                 </div>
             </div><br />
        
-            <button className="custom-btn btn-3" id="updatedesign" onClick={save}><span>Update <i className="bi bi-recycle"></i></span></button>
+            <button className="custom-btn btn-3" id="updatedesign2" onClick={save}><span>Update</span></button>
 
             {/* END INPUTS */}
 

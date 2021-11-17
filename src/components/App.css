@@ -20,6 +20,7 @@ for create instance styling
 #inputInstanceName {
   width: 290px;
   margin-left: 10px;
+  border: 1px solid black;
 }
 #IMType {
   font-size: 15px;
@@ -41,6 +42,13 @@ for create instance styling
   border-radius: 12px;
 
   padding-left: 30px;
+}
+#createdesign {
+  background: #63b8a7 ;
+}
+#createdesign:hover {
+  background: transparent;
+  box-shadow: none;
 }
 
 .extraimg {
@@ -81,6 +89,7 @@ for update instance styling
   width: 50%;
   margin-left: 38px;
   margin-top: 13px;
+  border: 1px solid black;
 }
 .UpApprovedOrigin {
   font-size: 12px;
@@ -90,6 +99,7 @@ for update instance styling
   width: 50%;
   margin-left: 38px;
   height: 200px;
+  border: 1px solid black;
 }
 
 .boldTxt {
@@ -121,6 +131,7 @@ for update instance styling
   width: 50%;
   margin-left: 165px;
   margin-top: -30px;
+  border: 1px solid black;
 }
 .title {
   margin-left: 15px;
@@ -132,11 +143,13 @@ for update instance styling
   margin-left: 50px;
   width: 250px;
   height: 200px;
+  border: 1px solid black;
 }
 .textArea2 {
   margin-left: 60px;
   width: 250px;
   height: 200px;
+  border: 1px solid black;
 }
 .AlfTxt {
   margin-left: 85px;
@@ -169,7 +182,16 @@ for update instance styling
 }
 
 #updatedesign {
-  background: #63b8a7;
+  background: #63b8a7 ;
+}
+
+#updatedesign2 {
+  background: #4686c8 ;
+   
+}
+#updatedesign2:hover {
+  background: transparent ;
+   
 }
 #updatedesign:hover {
   background: transparent;
@@ -184,6 +206,19 @@ for update instance styling
 
 /* ALL EFFECTS OF THE BUTTONS */
 
+
+
+
+
+/* 
+for update instance styling
+ */
+ #updateInstanceBtn{
+     margin-left:20px;
+ }
+#InstanceID{
+    width: 300px; 
+}
 .btn-3 {
   background: #63b8a7;
   width: 130px;
@@ -262,7 +297,7 @@ for update instance styling
  
 }
 
-.card-body1{
+/* .card-body1{
     background: rgb(0, 212, 255);
   background: linear-gradient(
     90deg,
@@ -270,8 +305,8 @@ for update instance styling
     rgba(255, 255, 255, 0.5247141092765231) 35%,
     rgba(0, 212, 255, 1) 100%
   );  
-}
-#card {
+} */
+/* #card {
   background: rgb(0, 212, 255);
   background: linear-gradient(
     90deg,
@@ -279,14 +314,14 @@ for update instance styling
     rgba(255, 255, 255, 0.5247141092765231) 35%,
     rgba(0, 212, 255, 1) 100%
   );
-}
+} */
 /* INPUTS */
 #inputInstanceField {
   width: 50%;
   margin-left: 38 px;
   margin-top: 13 px;
-  background: rgb(212, 255, 21);
-  background: linear-gradient(0deg, #fd7e14 0%, rgb(255, 196, 0) 100%);
+  /* background: rgb(212, 255, 21);
+  background: linear-gradient(0deg, #fd7e14 0%, rgb(255, 196, 0) 100%); */
   color: black;
 }
 
@@ -294,8 +329,8 @@ for update instance styling
   width: 50%;
   margin-left: 38 px;
   height: 200 px;
-  background: rgb(212, 255, 21);
-  background: linear-gradient(0deg, #fd7e14 0%, rgb(255, 196, 0) 100%);
+  /* background: rgb(212, 255, 21);
+  background: linear-gradient(0deg, #fd7e14 0%, rgb(255, 196, 0) 100%); */
   color: black;
 }
 
@@ -303,24 +338,19 @@ for update instance styling
   width: 50%;
   margin-left: 165 px;
   margin-top: -30 px;
-  background: rgb(212, 255, 21);
-  background: linear-gradient(0deg, #fd7e14 0%, rgb(255, 196, 0) 100%);
+  /* background: rgb(212, 255, 21);
+  background: linear-gradient(0deg, #fd7e14 0%, rgb(255, 196, 0) 100%); */
   color: black;
 }
 textarea.form-control {
   min-height: calc(1.5 em + 0.75 rem + 2 px);
-  background: rgb(212, 255, 21);
-  background: linear-gradient(0deg, #fd7e14 0%, rgb(255, 196, 0) 100%);
+  /* background: rgb(212, 255, 21);
+  background: linear-gradient(0deg, #fd7e14 0%, rgb(255, 196, 0) 100%); */
   color: black;
 }
 
 body {
   background-color: #ffffff;
-
-  background-attachment: fixed;
-  background-size: cover;
-  background: #ffffff;
-
 }
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css");
 
