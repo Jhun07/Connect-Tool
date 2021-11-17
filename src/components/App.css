@@ -261,7 +261,7 @@ for update instance styling
  
 }
 
-.card-body1{
+/* .card-body1{
     background: rgb(0, 212, 255);
   background: linear-gradient(
     90deg,
@@ -269,8 +269,8 @@ for update instance styling
     rgba(255, 255, 255, 0.5247141092765231) 35%,
     rgba(0, 212, 255, 1) 100%
   );  
-}
-#card {
+} */
+/* #card {
   background: rgb(0, 212, 255);
   background: linear-gradient(
     90deg,
@@ -278,14 +278,14 @@ for update instance styling
     rgba(255, 255, 255, 0.5247141092765231) 35%,
     rgba(0, 212, 255, 1) 100%
   );
-}
+} */
 /* INPUTS */
 #inputInstanceField {
   width: 50%;
   margin-left: 38 px;
   margin-top: 13 px;
-  background: rgb(212, 255, 21);
-  background: linear-gradient(0deg, #fd7e14 0%, rgb(255, 196, 0) 100%);
+  /* background: rgb(212, 255, 21);
+  background: linear-gradient(0deg, #fd7e14 0%, rgb(255, 196, 0) 100%); */
   color: black;
 }
 
@@ -293,8 +293,8 @@ for update instance styling
   width: 50%;
   margin-left: 38 px;
   height: 200 px;
-  background: rgb(212, 255, 21);
-  background: linear-gradient(0deg, #fd7e14 0%, rgb(255, 196, 0) 100%);
+  /* background: rgb(212, 255, 21);
+  background: linear-gradient(0deg, #fd7e14 0%, rgb(255, 196, 0) 100%); */
   color: black;
 }
 
@@ -302,20 +302,19 @@ for update instance styling
   width: 50%;
   margin-left: 165 px;
   margin-top: -30 px;
-  background: rgb(212, 255, 21);
-  background: linear-gradient(0deg, #fd7e14 0%, rgb(255, 196, 0) 100%);
+  /* background: rgb(212, 255, 21);
+  background: linear-gradient(0deg, #fd7e14 0%, rgb(255, 196, 0) 100%); */
   color: black;
 }
 textarea.form-control {
   min-height: calc(1.5 em + 0.75 rem + 2 px);
-  background: rgb(212, 255, 21);
-  background: linear-gradient(0deg, #fd7e14 0%, rgb(255, 196, 0) 100%);
+  /* background: rgb(212, 255, 21);
+  background: linear-gradient(0deg, #fd7e14 0%, rgb(255, 196, 0) 100%); */
   color: black;
 }
 
 body {
   background-color: #ffffff;
-
   background-attachment: fixed;
   background-size: cover;
   background: rgb(0, 212, 255);
