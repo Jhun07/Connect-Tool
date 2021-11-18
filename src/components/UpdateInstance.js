@@ -38,7 +38,7 @@ function Update() {
     const [lexBots, setLexBots] = useState("UAP_DEV_CCP_Bot");
 
     ///AWS LAMBDA
-    const [Lambda, setLambda] = useState("arn:aws:lambda:us-east-1:966145658840:function:UAP-DEV-updateAgentDB");
+    const [Lambda, setLambda] = useState("");
 
 
 function save() {

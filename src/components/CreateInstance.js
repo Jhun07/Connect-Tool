@@ -84,7 +84,6 @@ function Create() {
         html: text,
         icon: 'warning',
         confirmButtonColor: '#63b8a7',
-        customClass: "Custom_Cancel",
         confirmButtonText: okay,
         background: '#4686c8',
       })
