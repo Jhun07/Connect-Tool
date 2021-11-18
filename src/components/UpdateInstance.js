@@ -51,7 +51,7 @@ function save() {
     && Lambda !== "")
     
     {
-      Axios.put("https://vcp9rno202.execute-api.us-east-1.amazonaws.com/UpdateInstance", {InstanceAlias,Method,Origin, lexBots, Lambda,
+      Axios.put("https://vcp9rno202.execute-api.us-east-1.amazonaws.com/UpdateInstance", {InstanceAlias,Method,Origin,
      
       "CALL_RECORDINGS":{
         "BucketName":clBucket,
@@ -74,7 +74,17 @@ function save() {
       },
       "CONTACT_TRACE_RECORDS_StreamArn": {
         "StreamArn": ctrStreamArn
-      }
+      },
+      "lexBots": {
+        "BotName":lexBots,
+        "Region":"us-east-1"
+      },
+      "Lambda":[
+        Lambda
+      ]
+        
+    
+
     }
   
     )
