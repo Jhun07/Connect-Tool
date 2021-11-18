@@ -3,13 +3,14 @@ import { useState } from "react"; //HERE we imporgitt useState Hook so we can ad
 import Axios from "axios"; //allows us to make GET and POST requests from the browser.
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import Swal from "sweetalert2";
+import swal from "sweetalert2";
+import { useHistory } from 'react-router';
 
 
 // import { useHistory } from "react-router-dom"; // allows us to access our path / route history.
 
 function Create() {
-  // let history = useHistory(); //USE HISTORY  it will DETERMINED OUR PAST PATH.
+   let history = useHistory(); //USE HISTORY  it will DETERMINED OUR PAST PATH.
   const [InstanceAlias, setInstanceAlias] = useState("");
 
   const [IdentityManagementType, setIdentityManagementType] = useState("");
@@ -20,24 +21,43 @@ function Create() {
 
     console.log(InstanceAlias)
     console.log(IdentityManagementType)
-
+   
     if (InstanceAlias !== "" && IdentityManagementType !== "") {
       Axios.post("https://vcp9rno202.execute-api.us-east-1.amazonaws.com/CreateInstance", { InstanceAlias, IdentityManagementType, Method })
         .then((res) => {
-
+         
           if (res.data.includes("already used")) {
             const okay = '<b style="color: white;">Okay</b>'
             const title = `<b style="color: white; font-family: Graphik"> Oopss </b>`;
-        
-
-            Swal.fire({
-              title: title,
-              html: `<b style="color: rgb(51,51,51); font-size: 13px"> Instance alias is already used!  </b>`,
-              icon: 'warning',
-              confirmButtonColor: '#63b8a7',
-              confirmButtonText: okay,
-              background: '#4686c8',
-            })
+            swal.fire({
+                title: title,
+                html: `<b style="color:white; font-size: 13px"> Instance alias is already used!  </b>`+`<b style="color: white; font-size: 13px"> Do you want to update this Instance?  </b>`,
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#63b8a7',
+                confirmButtonText: okay,
+                cancelButtonText: 'cancel',
+                cancelButtonColor: '#d33',
+                background: '#4686c8',
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  localStorage.setItem("updatedInstance", "next step")
+                  swal.fire({
+                   title:`<b style="color:white; font-size: 13px"> You may now proceed to step 2  </b>`,
+                    html:`<b style="color:white; font-size: 13px"> Update your instance  </b>`,
+                    icon:'success',
+                    background: '#4686c8',
+                  })
+                history.push("/updateInstance")
+                }else{
+                  swal.fire({
+                    html:`<b style="color:white; font-size: 13px">Cancelled </b>`,
+                    icon:'cancel',
+                    background: '#4686c8',
+                     
+                  })
+                }
+              })
             console.log(res.data)
 
           } else if (res.data.includes("successfully created")) {
@@ -49,14 +69,52 @@ function Create() {
             const title = `<b style="color: white; font-family: Graphik "> Your instance is successfully created </b>`; 
             const okay = '<b style="color: white;">Okay</b>'
 
-            Swal.fire({
+
+            swal.fire({
               title: title,
-              html: `<b style="color: black ; font-size: 13px"> Instance ID: </b>`+ `<b style="color: white ; font-size: 13px">${getInstanceIDOnly}</b>` ,
-              icon: 'success',
-              confirmButtonColor: '#63b8a7',
-              confirmButtonText: okay,
+              html: `<b style="color: black ; font-size: 13px"> Instance ID: </b>`+ `<b style="color: white ; font-size: 13px">${getInstanceIDOnly}</b>`+`<br />`+`Do you want to proceed?`,
+              type: 'success',
+              showCancelButton: true,
+              confirmButtonColor: '#3085d6',
+              cancelButtonColor: '#d33',
+              confirmButtonText: 'Yes',
+              confirmButtonClass: 'btn btn-success',
+              cancelButtonText: 'cancel',
+              cancelButtonClass: 'btn btn-danger',
+              buttonsStyling: false,
               background: '#4686c8',
+            }).then((result) => {
+              
+              if (result.isConfirmed) {
+                localStorage.setItem("createdInstance", "next step")
+                swal.fire({
+                  title:`<b style="color:white; font-size: 20px"> Thank You  </b>`,
+                    html:`<b style="color:white; font-size: 13px"> You may now update your instance  </b>`,
+                    icon:'success',
+                    background: '#4686c8',
+
+                })
+              }else{
+                swal.fire(
+                  'Cancelled',
+          
+                )
+              }
             })
+            
+
+
+
+
+
+            // swal.fire({
+            //   title: title,
+            //   html: `<b style="color: black ; font-size: 13px"> Instance ID: </b>`+ `<b style="color: white ; font-size: 13px">${getInstanceIDOnly}</b>` ,
+            //   icon: 'success',
+            //   confirmButtonColor: '#63b8a7',
+            //   confirmButtonText: okay,
+            //   background: '#4686c8',
+            // })
 
           }
           
@@ -64,7 +122,7 @@ function Create() {
             const title = `<b style="color: white; font-family: Graphik"> Limit reached. </b>`;
             const okay = '<b style="color: white;">Okay</b>';
             
-            Swal.fire({
+            swal.fire({
               title: title,
               html: `<b style="color: rgb(51,51,51); font-size: 13px"> Quota limit reached for number of instance! </b>`,
               icon: 'warning',
@@ -79,7 +137,7 @@ function Create() {
         const text = `<b style="color: rgb(51,51,51); font-size: 13px"> All fields must not be empty! </b>`;
         const okay = '<b style="color: white;">Okay</b>'
         const title = `<b style="color: white;  font-family: Graphik"> Required </b>`;
-      Swal.fire({
+      swal.fire({
         title: title,
         html: text,
         icon: 'warning',
