@@ -27,14 +27,43 @@ function Create() {
 
           if (res.data.includes("already used")) {
 
-            Swal.fire({
-              title: 'Oopss',
-              text: "Instance alias is already used!",
-              icon: 'warning',
-              confirmButtonColor: 'rgb(0, 212, 255)',
-              confirmButtonText: 'Okay',
-              background: 'rgb(0,212,255)',
-              background: 'linear-gradient(90deg, rgba(0,212,255,1) 0%, rgba(255,255,255,1) 35%, rgba(0,212,255,1) 100%)',  
+             Swal.fire({
+
+              title: 'Are you sure?',
+              text: "You won't be able to revert this!",
+              type: 'warning',
+              showCancelButton: true,
+              confirmButtonColor: '#3085d6',
+              cancelButtonColor: '#d33',
+              confirmButtonText: 'Yes, delete it!',
+              cancelButtonText: 'No, cancel!',
+              confirmButtonClass: 'btn btn-success',
+              cancelButtonClass: 'btn btn-danger',
+              buttonsStyling: false
+            }).then(function () {
+              Swal(
+                'Deleted!',
+                'Your file has been deleted.',
+                'success'
+              )
+            }, function (dismiss) {
+              // dismiss can be 'cancel', 'overlay',
+              // 'close', and 'timer'
+              if (dismiss === 'cancel') {
+                Swal(
+                  'Cancelled',
+                  'Your imaginary file is safe :)',
+                  'error'
+                )
+              }
+
+            //   title: 'Oopss',
+              // text: "Instance alias is already used!",
+              // icon: 'warning',
+              // confirmButtonColor: 'rgb(0, 212, 255)',
+              // confirmButtonText: 'Okay',
+              // background: 'rgb(0,212,255)',
+              // background: 'linear-gradient(90deg, rgba(0,212,255,1) 0%, rgba(255,255,255,1) 35%, rgba(0,212,255,1) 100%)',  
             })
             console.log(res.data)
 
@@ -46,14 +75,30 @@ function Create() {
 
 
             Swal.fire({
-              title: 'Your instance is successfully created.',
-              text: "Instance ID: " + getInstanceIDOnly,
-              icon: 'success',
-              confirmButtonColor: 'rgb(0, 212, 255)',
-              confirmButtonText: 'Okay',
-              background: 'rgb(0,212,255)',
-              background: 'linear-gradient(90deg, rgba(0,212,255,1) 0%, rgba(255,255,255,1) 35%, rgba(0,212,255,1) 100%)',
+
+              title: 'Your instance is successfully created',
+              text: "Instance ID:" + getInstanceIDOnly,
+              text:"Do you want to proceed to step 2?",
+              type: 'success',
+              showCancelButton: true,
+              confirmButtonColor: '#3085d6',
+              cancelButtonColor: '#d33',
+              confirmButtonText: 'Yes'
+            }).then((confirmButton) =>{
+                if(confirmButton==true){
+                  localStorage.setItem("InstanceCreated",getInstanceIDOnly);
+                }
+
             })
+             
+              // title: 'Your instance is successfully created.',
+              // text: "Instance ID: " + getInstanceIDOnly,
+              // icon: 'success',
+              // confirmButtonColor: 'rgb(0, 212, 255)',
+              // confirmButtonText: 'Okay',
+              // background: 'rgb(0,212,255)',
+              // background: 'linear-gradient(90deg, rgba(0,212,255,1) 0%, rgba(255,255,255,1) 35%, rgba(0,212,255,1) 100%)',
+          
 
           }
           else if (res.data.includes("Quota limit reached")) {
