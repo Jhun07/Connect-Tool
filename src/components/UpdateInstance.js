@@ -5,6 +5,7 @@ import "bootstrap/dist/js/bootstrap.min.js";
 import Axios from "axios"; //allows us to make GET and POST requests from the browser.
 import { useState } from "react"; //HERE we import useState Hook so we can add state to our functional components.
 import Swal from "sweetalert2"; //IMPORT FOR THE SWAL
+import { useHistory } from 'react-router';
 
 
 function Update() {
@@ -50,7 +51,7 @@ function save() {
     && Lambda !== "")
     
     {
-      Axios.put("https://vcp9rno202.execute-api.us-east-1.amazonaws.com/UpdateInstance", {InstanceAlias,Method,Origin, lexBots, Lambda,
+      Axios.put("https://vcp9rno202.execute-api.us-east-1.amazonaws.com/UpdateInstance", {InstanceAlias,Method,Origin,
      
       "CALL_RECORDINGS":{
         "BucketName":clBucket,
@@ -73,7 +74,17 @@ function save() {
       },
       "CONTACT_TRACE_RECORDS_StreamArn": {
         "StreamArn": ctrStreamArn
-      }
+      },
+      "lexBots": {
+        "BotName":lexBots,
+        "Region":"us-east-1"
+      },
+      "Lambda":[
+        Lambda
+      ]
+        
+    
+
     }
   
     )
@@ -206,6 +217,21 @@ function save() {
 
       })
     }
+}
+let redirect =useHistory();
+
+if(localStorage.getItem("createdInstance")==null && localStorage.getItem("updatedInstance")==null ){
+    Swal.fire({
+        title: `<b style="color: white; font-size: 20px">Oops! </b>`,
+        html: `<b style="color: white; font-size: 13px">Please create an instance first! </b>`,
+        icon: 'warning',
+        confirmButtonColor: '#63b8a7',
+        customClass: "Custom_Cancel",
+        confirmButtonText:'<b style="color: white;">Okay</b>',
+        background: '#4686c8',
+        
+      })
+      redirect.push("/")
 }
     return (
         <div className="container">
