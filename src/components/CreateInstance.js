@@ -31,7 +31,7 @@ function Create() {
             const title = `<b style="color: white; font-family: Graphik"> Oopss </b>`;
             swal.fire({
                 title: title,
-                html: `<b style="color:rgb(51,51,51); font-size: 13px"> Instance alias is already used!  </b>`+`<b style="color: rgb(51,51,51); font-size: 13px"> Do you want to update this Instance?  </b>`,
+                html: `<b style="color:white; font-size: 13px;font-family: Graphik"> Instance alias is already used!  </b>`+'<br />'+`<b style="color: white; font-size: 13px;font-family: Graphik"> Do you want to update this Instance?  </b>`,
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#63b8a7',
@@ -43,9 +43,10 @@ function Create() {
                 if (result.isConfirmed) {
                   localStorage.setItem("updatedInstance", "next step")
                   swal.fire({
-                   title:`<b style="color:white; font-size: 13px"> You may now proceed to step 2  </b>`,
-                    html:`<b style="color:rgb(51,51,51); font-size: 13px"> Update your instance  </b>`,
+                   title:`<b style="color:white; font-size: 20px; font-family: Graphik"> You may now proceed to step 2  </b>`,
+                    html:`<b style="color:white; font-size: 13px; font-family: Graphik"> Update your instance  </b>`,
                     icon:'success',
+                    confirmButtonColor: '#63b8a7',
                     background: '#4686c8',
                   })
                 history.push("/updateInstance")
@@ -124,7 +125,7 @@ function Create() {
             
             swal.fire({
               title: title,
-              html: `<b style="color: rgb(51,51,51); font-size: 13px"> Quota limit reached for number of instance! </b>`,
+              html: `<b style="color: white; font-size: 13px"> Quota limit reached for number of instance! </b>`,
               icon: 'warning',
               confirmButtonColor: '#63b8a7',
               confirmButtonText: okay,
@@ -134,7 +135,7 @@ function Create() {
           }
         })
     } else {
-        const text = `<b style="color: rgb(51,51,51); font-size: 13px"> All fields must not be empty! </b>`;
+        const text = `<b style="color: white; font-size: 13px"> All fields must not be empty! </b>`;
         const okay = '<b style="color: white;">Okay</b>'
         const title = `<b style="color: white;  font-family: Graphik"> Required </b>`;
       swal.fire({

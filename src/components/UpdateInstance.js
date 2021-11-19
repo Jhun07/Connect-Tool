@@ -203,7 +203,7 @@ function save() {
         })
       })
     }else{
-        const text = `<b style="color: rgb(51,51,51); font-size: 13px"> All fields must not be empty! </b>`;
+        const text = `<b style="color: white; font-size: 13px"> All fields must not be empty! </b>`;
         const okay = '<b style="color: white;">Okay</b>'
         const title = `<b style="color: white; font-family: Graphik"> Required </b>`;
       Swal.fire({
