@@ -31,7 +31,7 @@ function Create() {
             const title = `<b style="color: white; font-family: Graphik"> Oopss </b>`;
             swal.fire({
                 title: title,
-                html: `<b style="color:white; font-size: 13px"> Instance alias is already used!  </b>`+`<b style="color: white; font-size: 13px"> Do you want to update this Instance?  </b>`,
+                html: `<b style="color:rgb(51,51,51); font-size: 13px"> Instance alias is already used!  </b>`+`<b style="color: rgb(51,51,51); font-size: 13px"> Do you want to update this Instance?  </b>`,
                 icon: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#63b8a7',
@@ -44,7 +44,7 @@ function Create() {
                   localStorage.setItem("updatedInstance", "next step")
                   swal.fire({
                    title:`<b style="color:white; font-size: 13px"> You may now proceed to step 2  </b>`,
-                    html:`<b style="color:white; font-size: 13px"> Update your instance  </b>`,
+                    html:`<b style="color:rgb(51,51,51); font-size: 13px"> Update your instance  </b>`,
                     icon:'success',
                     background: '#4686c8',
                   })
