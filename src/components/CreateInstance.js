@@ -72,16 +72,13 @@ function Create() {
 
             swal.fire({
               title: title,
-              html: `<b style="color: black ; font-size: 13px"> Instance ID: </b>`+ `<b style="color: white ; font-size: 13px">${getInstanceIDOnly}</b>`+`<br />`+`Do you want to proceed?`,
+              html: `<b style="color:white ; font-size: 15px"> Instance ID: </b>`+ `<b style="color: white ; font-size: 13px">${getInstanceIDOnly}</b>`+`<br />`+`Do you want to proceed?`,
               type: 'success',
               showCancelButton: true,
               confirmButtonColor: '#3085d6',
               cancelButtonColor: '#d33',
               confirmButtonText: 'Yes',
-              confirmButtonClass: 'btn btn-success',
               cancelButtonText: 'cancel',
-              cancelButtonClass: 'btn btn-danger',
-              buttonsStyling: false,
               background: '#4686c8',
             }).then((result) => {
               
@@ -102,19 +99,6 @@ function Create() {
               }
             })
             
-
-
-
-
-
-            // swal.fire({
-            //   title: title,
-            //   html: `<b style="color: black ; font-size: 13px"> Instance ID: </b>`+ `<b style="color: white ; font-size: 13px">${getInstanceIDOnly}</b>` ,
-            //   icon: 'success',
-            //   confirmButtonColor: '#63b8a7',
-            //   confirmButtonText: okay,
-            //   background: '#4686c8',
-            // })
 
           }
           
