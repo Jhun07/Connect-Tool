@@ -137,7 +137,7 @@ function Create() {
     <>
      <div>
        <br></br>
-       <a href="/createInstance"><button className="custom-btn btn-3"><span>Create Instance</span></button></a>
+       <a href="/createInstance"><button className="custom-btn btn-3 bg-primary" id="createbtn"><span>Create Instance</span></button></a>
             <a href="/updateInstance"> <button className="custom-btn btn-3" id="updatedesign"><span>Update Instance</span></button></a>
    
       <br/><br/>

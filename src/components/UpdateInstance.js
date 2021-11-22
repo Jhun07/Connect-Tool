@@ -227,7 +227,7 @@ if(localStorage.getItem("createdInstance")==null && localStorage.getItem("update
         <div className="container">
             <br></br>
             <a href="/createInstance"><button className="custom-btn btn-3" id="createdesign"><span>Create Instance</span></button></a>
-            <a href="/updateInstance"> <button className="custom-btn btn-3" id="updatedesign"><span>Update Instance</span></button></a>
+            <a href="/updateInstance"> <button className="custom-btn btn-3 bg-primary" id="updatedesign"><span>Update Instance</span></button></a>
    
             <br></br>
             <br></br>
