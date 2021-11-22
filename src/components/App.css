@@ -47,7 +47,6 @@ for create instance styling
   background: #63b8a7 ;
 }
 #createdesign:hover {
-  background: transparent;
   box-shadow: none;
 }
 
@@ -62,6 +61,8 @@ for create instance styling
   
   
 }
+
+
 
 /* 
 for update instance styling
@@ -142,13 +143,13 @@ for update instance styling
 .textArea1 {
   margin-left: 50px;
   width: 250px;
-  height: 50px;
+  height: 200px;
   border: 1px solid black;
 }
 .textArea2 {
   margin-left: 60px;
   width: 250px;
-  height: 148px;
+  height: 200px;
   border: 1px solid black;
 }
 .AlfTxt {
@@ -156,7 +157,7 @@ for update instance styling
 }
 .column1 {
   margin-left: 290px;
-  margin-top: -172px;
+  margin-top: -225px;
 }
 .updateBtn {
   margin-right: 10px;
@@ -184,6 +185,9 @@ for update instance styling
 #updatedesign {
   background: #63b8a7 ;
 }
+#updatedesign:hover {
+color:black
+}
 
 #updatedesign2 {
   background: #4686c8 ;
@@ -194,7 +198,7 @@ for update instance styling
    
 }
 #updatedesign:hover {
-  background: transparent;
+ 
   box-shadow: none;
 }
 
@@ -262,7 +266,7 @@ for update instance styling
   width: 100%;
 }
 .btn-3 span:hover {
-  color: rgba(2, 126, 251, 1);
+  color: rgb(255, 255, 255);
 }
 .btn-3 span:before,
 .btn-3 span:after {
