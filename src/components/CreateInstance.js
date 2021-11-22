@@ -77,12 +77,10 @@ function Create() {
               type: 'success',
               confirmButtonColor: '#3085d6',
               confirmButtonText: 'Yes',
-              confirmButtonClass: 'btn btn-success',
               buttonsStyling: false,
               showCancelButton: true,
               cancelButtonColor: '#d33',
               cancelButtonText: 'cancel',
-              cancelButtonClass: 'btn btn-danger',
               background: '#4686c8',
             }).then((result) => {
               
