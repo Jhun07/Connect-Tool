@@ -73,16 +73,16 @@ function Create() {
 
             swal.fire({
               title: title,
-              html: `<b style="color: black ; font-size: 13px"> Instance ID: </b>`+ `<b style="color: white ; font-size: 13px">${getInstanceIDOnly}</b>`+`<br />`+`Do you want to proceed?`,
+              html: `<b style="color: black ; font-size: 18px"> Instance ID: </b>`+ `<b style="color: white ; font-size: 18px">${getInstanceIDOnly}</b>`+`<br />`+`<b style="color: white ; font-size: 13px; font-family: Graphik">Do you want to proceed to </b>`+ `<b style="color: orange">STEP 2</b>`+`<b style="color: white ; font-size: 13px; font-family: Graphik"> to update your Instance?</b>`,
               type: 'success',
-              showCancelButton: true,
               confirmButtonColor: '#3085d6',
-              cancelButtonColor: '#d33',
               confirmButtonText: 'Yes',
               confirmButtonClass: 'btn btn-success',
+              buttonsStyling: false,
+              showCancelButton: true,
+              cancelButtonColor: '#d33',
               cancelButtonText: 'cancel',
               cancelButtonClass: 'btn btn-danger',
-              buttonsStyling: false,
               background: '#4686c8',
             }).then((result) => {
               
@@ -95,6 +95,8 @@ function Create() {
                     background: '#4686c8',
 
                 })
+                history.push("/updateInstance")
+
               }else{
                 swal.fire(
                   'Cancelled',

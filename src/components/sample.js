@@ -14,31 +14,29 @@ function Update() {
     const Method ="Update";
 
    ///CALL RECORDINGS
-    const [clBucket, setClBucket] = useState("");
-    const [clPrefix, setClPrefix] = useState("");
-    const [clKMSKeyARN, setClKMSKeyARN] = useState("");
+    const [clBucket, setClBucket] = useState("uap-dev-call-recordings");
+    const [clPrefix, setClPrefix] = useState("DELETE");
+    const [clKMSKeyARN, setClKMSKeyARN] = useState("arn:aws:kms:us-east-1:966145658840:key/8692921d-d3e4-4887-86d1-da74e43d0751");
 
     ///CHAT_TRANSCRIPTS
-    const [ctBucket, setCtBucket] = useState("");
-    const [ctPrefix, setCtPrefix] = useState("");
-    const [ctKMSKeyARN, setCtKMSKeyARN] = useState("");
+    const [ctBucket, setCtBucket] = useState("uap-dev-chat-transcripts");
+    const [ctPrefix, setCtPrefix] = useState("ChatTranscripts");
+    const [ctKMSKeyARN, setCtKMSKeyARN] = useState("arn:aws:kms:us-east-1:966145658840:key/8692921d-d3e4-4887-86d1-da74e43d0751");
 
     ///MEDIA_STREAMS
-    const [msPrefix, setMsPrefix] = useState("");
-    const [msKMSKeyId, setMsKMSKeyId] = useState("");
+    const [msPrefix, setMsPrefix] = useState("uap-dev-streams");
+    const [msKMSKeyId, setMsKMSKeyId] = useState("825ef77b-6174-4dd8-83dc-d9adbc20146c");
 
     ///SCHEDULED_REPORTS
-    const [srBucket, setSrBucket] = useState("");
-    const [srPrefix, setSrPrefix] = useState("");
-    const [srKMSKeyARN, setSrKMSKeyARN] = useState("");
+    const [srBucket, setSrBucket] = useState("uap-dev-reports");
+    const [srPrefix, setSrPrefix] = useState("Reports");
+    const [srKMSKeyARN, setSrKMSKeyARN] = useState("arn:aws:kms:us-east-1:966145658840:key/8692921d-d3e4-4887-86d1-da74e43d0751");
 
     ///CONTACT_TRACE_RECORDS
-    const [ctrStreamArn, setCtrStreamArn] = useState("");
+    const [ctrStreamArn, setCtrStreamArn] = useState("arn:aws:kinesis:us-east-1:966145658840:stream/UAP-DEV-Kinesis-CTR");
 
     ///LEX BOTS
-    const [lexBots, setLexBots] = useState("");
-
-    const [lexRegion, setLexRegion] = useState("");
+    const [lexBots, setLexBots] = useState("UAP_DEV_CCP_Bot");
 
     ///AWS LAMBDA
     const [Lambda, setLambda] = useState("");
@@ -50,7 +48,7 @@ function save() {
     && ctBucket !== ""  && ctPrefix !== "" && ctKMSKeyARN !== "" && msPrefix !== "" && msKMSKeyId !== ""
 
     && srBucket !== ""  && srPrefix !== "" && srKMSKeyARN !== "" && ctrStreamArn !== "" && lexBots !== ""
-    && Lambda !== "" && lexRegion !== "")
+    && Lambda !== "")
     
     {
       Axios.put("https://vcp9rno202.execute-api.us-east-1.amazonaws.com/UpdateInstance", {InstanceAlias,Method,Origin,
@@ -79,7 +77,7 @@ function save() {
       },
       "lexBots": {
         "BotName":lexBots,
-        "Region":lexRegion
+        "Region":"us-east-1"
       },
       "Lambda":[
         Lambda
@@ -445,21 +443,11 @@ if(localStorage.getItem("createdInstance")==null && localStorage.getItem("update
             <br></br>
             <div className="card cardName" id="card">
                 <br />
-                <h5 className="boldTxt">Amazon Lex Bot</h5>
+                <h5 className="boldTxt">Resources</h5>
                 <div className="row">
                     <div className="column">
                         <div className="card-sm-6">
-                            <h7 className="AlbTxt">LEX BOT REGION</h7>
-                            <div className="col-sm-10">
-                                <textarea  onChange={(event) => {
-                            setLexRegion(event.target.value);
-                          }} class="form-control textArea1" rows="3"></textarea>
-                            </div>
-                        </div>
-                    </div><br /><br /><br /><br />
-                    <div className="column">
-                        <div className="card-sm-6">
-                            <h7 className="AlbTxt">LEX BOT NAME</h7>
+                            <h7 className="AlbTxt">Amazon Lex Bot</h7>
                             <div className="col-sm-10">
                                 <textarea  onChange={(event) => {
                             setLexBots(event.target.value);
