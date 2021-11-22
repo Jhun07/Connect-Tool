@@ -143,13 +143,13 @@ for update instance styling
 .textArea1 {
   margin-left: 50px;
   width: 250px;
-  height: 200px;
+  height: 50px;
   border: 1px solid black;
 }
 .textArea2 {
   margin-left: 60px;
   width: 250px;
-  height: 200px;
+  height: 148px;
   border: 1px solid black;
 }
 .AlfTxt {
@@ -157,7 +157,7 @@ for update instance styling
 }
 .column1 {
   margin-left: 290px;
-  margin-top: -225px;
+  margin-top: -172px;
 }
 .updateBtn {
   margin-right: 10px;
@@ -187,6 +187,7 @@ for update instance styling
 }
 #updatedesign:hover {
 color:black
+
 }
 
 #updatedesign2 {
