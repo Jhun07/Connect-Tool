@@ -44,15 +44,11 @@ function Update() {
     const [Lambda, setLambda] = useState("");
 
 
-function save() {
-    if(InstanceAlias !== "" && Origin !== ""  && clBucket !== "" && clPrefix !== "" && clKMSKeyARN !== ""
-        
-    && ctBucket !== ""  && ctPrefix !== "" && ctKMSKeyARN !== "" && msPrefix !== "" && msKMSKeyId !== ""
 
-    && srBucket !== ""  && srPrefix !== "" && srKMSKeyARN !== "" && ctrStreamArn !== "" && lexBots !== ""
-    && Lambda !== "" && lexRegion !== "")
+function save() {
     
-    {
+    
+  
       Axios.put("https://vcp9rno202.execute-api.us-east-1.amazonaws.com/UpdateInstance", {InstanceAlias,Method,Origin,
      
       "CALL_RECORDINGS":{
@@ -141,7 +137,9 @@ function save() {
 
         Swal.fire({
           title: title,
-           html:  `<table id="table" border=1>
+           html:  `
+        
+           <table id="table" border=1>
        
            <tbody>
                <tr>
@@ -204,21 +202,7 @@ function save() {
 
         })
       })
-    }else{
-        const text = `<b style="color: white; font-size: 13px"> All fields must not be empty! </b>`;
-        const okay = '<b style="color: white;">Okay</b>'
-        const title = `<b style="color: white; font-family: Graphik"> Required </b>`;
-      Swal.fire({
-        title: title,
-        html: text,
-        icon: 'warning',
-        confirmButtonColor: '#63b8a7',
-        customClass: "Custom_Cancel",
-        confirmButtonText: okay,
-        background: '#4686c8',
-
-      })
-    }
+  
 }
 let redirect =useHistory();
 
