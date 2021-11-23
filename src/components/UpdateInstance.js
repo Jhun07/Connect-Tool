@@ -128,7 +128,138 @@ function save() {
         console.log(Lambda)
        
         console.log(res.data)
+
+      
+        let arrayOfNoChanges =[]
+        const noChanges="No changes";
+
+        if(dataStorage.CallRecord.includes(noChanges)){
+           arrayOfNoChanges.push("CallRecord")
+        }if((dataStorage.ChatTranscripts.includes(noChanges))){
+            arrayOfNoChanges.push("ChatTranscripts")
+        }if((dataStorage.MediaStream.includes(noChanges))){
+            arrayOfNoChanges.push("MediaStream")
+        }if((dataStorage.Reports.includes(noChanges))){
+            arrayOfNoChanges.push("Reports")
+        }if((dataStorage.CTR.includes(noChanges))){
+            arrayOfNoChanges.push("CTR")
+        }if((Origin.includes(noChanges))){
+            arrayOfNoChanges.push("Origin")
+        }if((Lex.includes(noChanges))){
+            arrayOfNoChanges.push("Lex")
+        }if((Lambda.includes(noChanges))){
+            arrayOfNoChanges.push("Lambda")
+        }
+
+
+
        
+        let arrayOfUpdates=[]
+        const updatedSuccessfully="Updated Successfully"
+        if((Origin.includes(updatedSuccessfully))){
+            arrayOfUpdates.push("Origin")
+        }
+        if((Lambda.includes(updatedSuccessfully))){
+            arrayOfUpdates.push("Lambda")
+        }
+        if((Lex.includes(updatedSuccessfully))){
+            arrayOfUpdates.push("Lambda")
+        }
+        if(dataStorage.CallRecord.includes(updatedSuccessfully)){
+            arrayOfUpdates.push("CallRecord")
+
+        }if((dataStorage.ChatTranscripts.includes(updatedSuccessfully))){
+            arrayOfUpdates.push("ChatTranscripts")
+
+        }if((dataStorage.MediaStream.includes(updatedSuccessfully))){
+            arrayOfUpdates.push("MediaStream")
+
+        }if((dataStorage.Reports.includes(updatedSuccessfully))){
+            arrayOfUpdates.push("Reports")
+
+        }if((dataStorage.CTR.includes(updatedSuccessfully))){
+            arrayOfUpdates.push("Contact Trace Records")
+        }
+
+
+        ////INVALID INPUTS
+        const invalidInputs = "Invalid inputs";
+        let arrayOfInvalidInputs=[]
+        if((Origin.includes(invalidInputs))){
+            arrayOfInvalidInputs.push("Origin")
+        }
+        if((Lambda.includes(invalidInputs))){
+            arrayOfInvalidInputs.push("Lambda")
+        }
+        if((Lex.includes(invalidInputs))){
+            arrayOfInvalidInputs.push("Lambda")
+        }
+        if(dataStorage.CallRecord.includes(invalidInputs)){
+            arrayOfInvalidInputs .push("CallRecord")
+
+        }if((dataStorage.ChatTranscripts.includes(invalidInputs))){
+            arrayOfInvalidInputs.push("ChatTranscripts")
+
+        }if((dataStorage.MediaStream.includes(invalidInputs))){
+            arrayOfInvalidInputs.push("MediaStream")
+
+        }if((dataStorage.Reports.includes(invalidInputs))){
+            arrayOfInvalidInputs.push("Reports")
+
+        }if((dataStorage.CTR.includes(invalidInputs))){
+            arrayOfInvalidInputs.push("Contact Trace Records")
+        }
+
+        /// NO ASSOCIATED
+
+        let arrayOfNoAssociated = [];
+
+        const noAssociated = "associated";
+       
+        if((Origin.includes(noAssociated))){
+            arrayOfNoAssociated.push("Origin")
+        }
+        if((Lambda.includes(noAssociated))){
+            arrayOfNoAssociated.push("Lambda")
+        }
+        if((Lex.includes(noAssociated))){
+            arrayOfNoAssociated.push("Lex")
+        }
+
+        console.log("--------RESULTS------------")
+        console.log("No Changes:  ",arrayOfNoChanges)
+        console.log("")
+        console.log("Updated Successfully:  ",arrayOfUpdates)
+        console.log("")
+        console.log("Invalid Inputs:  ",arrayOfInvalidInputs)
+        console.log("")
+        console.log("No Associated:  ",arrayOfNoAssociated)
+
+
+        
+        const stringOfNoChanges=JSON.stringify(arrayOfNoChanges)
+        const NoChangesFormat = stringOfNoChanges.replaceAll('"', "");
+        console.log(NoChangesFormat)
+
+        const stringOfUpdates=JSON.stringify(arrayOfUpdates)
+        const UpdatesFormat = stringOfUpdates.replaceAll('"', "");
+        console.log(UpdatesFormat)
+
+        const stringOfInvalidInputs=JSON.stringify(arrayOfInvalidInputs)
+        const InvalidInputsFormat = stringOfInvalidInputs.replaceAll('"', "");
+        console.log(InvalidInputsFormat)
+
+        
+        const stringOfNoAssociated=JSON.stringify(arrayOfNoAssociated)
+        const NoAssociatedFormat = stringOfNoAssociated.replaceAll('"', "");
+        console.log(NoAssociatedFormat)
+      
+
+
+
+
+        
+
 
      
         
@@ -151,43 +282,30 @@ function save() {
                </tr>
 
                <tr>
-               <td style="width:40px; border: 1px solid black;color: white; text-align:left;padding-left: 10px"><b>Call Record➤</b></td>
-               <td style="width:60%;font-size: 13px;color: black;;text-align:left; border: 1px solid black;">${dataStorage.CallRecord}</td>      
+               <td style="width:40px; border: 1px solid black;color: white; text-align:left;padding-left: 10px"><b>No changes➤</b></td>
+               <td style="width:60%;font-size: 13px;color: black;;text-align:left; border: 1px solid black;">${NoChangesFormat}</td>      
               </tr>
 
               <tr>
-              <td style="width:40px; text-align:left;color: white; border: 1px solid black;padding-left: 10px"><b>Chat Transcripts➤</b></td>
-              <td style="width:60%;font-size: 13px;color: black;text-align:left; border: 1px solid black;">${dataStorage.ChatTranscripts}</td>      
+              <td style="width:40px; text-align:left;color: white; border: 1px solid black;padding-left: 10px"><b>Updated Successfully➤</b></td>
+              <td style="width:60%;font-size: 13px;color: black;text-align:left; border: 1px solid black;">${UpdatesFormat}</td>      
              </tr>
 
               <tr>
-              <td style="width:40px; text-align:left;color: white; border: 1px solid black;padding-left: 10px"><b>MediaStream➤</b></td>
-              <td style="width:60%;font-size: 13px;color: black;text-align:left; border: 1px solid black;">${dataStorage.MediaStream}</td>      
+              <td style="width:40px; text-align:left;color: white; border: 1px solid black;padding-left: 10px"><b>Invalid Inputs➤</b></td>
+              <td style="width:60%;font-size: 13px;color: black;text-align:left; border: 1px solid black;">${InvalidInputsFormat}</td>      
              </tr>
 
               <tr>
-              <td style="width:40px; text-align:left;color: white; border: 1px solid black;padding-left: 10px"><b> Reports➤</b></td>
-              <td style="width:60%;font-size: 13px;color: black;text-align:left; border: 1px solid black;">${dataStorage.Reports}</td>      
+              <td style="width:40px; text-align:left;color: white; border: 1px solid black;padding-left: 10px"><b>No Associated➤</b></td>
+              <td style="width:60%;font-size: 13px;color: black;text-align:left; border: 1px solid black;">${NoAssociatedFormat}</td>      
              </tr>
 
-              <tr>
-              <td style="width:40px; text-align:left; color: white; border: 1px solid black;padding-left: 10px"><b>CTR➤</b></td>
-              <td style="width:60%;font-size: 13px;color: black;text-align:left; border: 1px solid black;">${dataStorage.CTR}</td>      
-             </tr>
+            
 
-              <tr>
-              <td style="width:40px; text-align:left; color: white;border: 1px solid black;padding-left: 10px"><b>Origin➤</b></td>
-              <td style="width:60%;font-size: 13px;  color: black;text-align:left; border: 1px solid black;">${Origin}</td>      
-             </tr>
+            
 
-              <tr>
-              <td style="width:40px; text-align:left;color: white; border: 1px solid black;padding-left: 10px"><b>Lex➤</b></td>
-              <td style="width:60%;font-size:13px;  color: black;text-align:left; border: 1px solid black;">${Lex}</td>      
-             </tr>
-              <tr>
-              <td style="width:40px; text-align:left;color: white; border: 1px solid black;padding-left: 10px"><b>Lambda➤</b></td>
-              <td style="width:60%;font-size: 13px;color: black;text-align:left; border: 1px solid black;">${Lambda}</td>      
-             </tr>
+           
 
 
              
