@@ -66,16 +66,16 @@ function Create() {
             const getInstanceIDOnly = response[1];
             console.log(getInstanceIDOnly)
             
-            const title = `<b style="color: white; font-family: Graphik "> Your instance is successfully created </b>`; 
+            const title = `<b style="color: white; font-family: Graphik "> Your instance is successfully created!</b>`; 
             const okay = '<b style="color: white;">Okay</b>'
 
 
             swal.fire({
               title: title,
-              html: `<b style="color:white ; font-size: 15px"> Instance ID: </b>`+ `<b style="color: white ; font-size: 13px">${getInstanceIDOnly}</b>`+`<br />`+`Do you want to proceed?`,
+              html: `<b style="color: black ; font-size: 15px; font-family: Graphik "> Instance ID: </b>`+ `<b style="color: white ; font-size: 15px ; font-family: Graphik ">${getInstanceIDOnly}</b>`+`<br />`+`<br /><b style="color: white ; font-size: 15px; font-family: Graphik ">Do you want to proceed to Step 2 to update this instance?</b>`,
               type: 'success',
               showCancelButton: true,
-              confirmButtonColor: '#3085d6',
+              confirmButtonColor: '#63b8a7',
               cancelButtonColor: '#d33',
               confirmButtonText: 'Yes',
               cancelButtonText: 'cancel',
@@ -108,7 +108,7 @@ function Create() {
             
             swal.fire({
               title: title,
-              html: `<b style="color: rgb(51,51,51); font-size: 13px"> Quota limit reached for number of instance! </b>`,
+              html: `<b style="color: white; font-size: 13px"> Quota limit reached for number of instance! </b>`,
               icon: 'warning',
               confirmButtonColor: '#63b8a7',
               confirmButtonText: okay,
@@ -118,7 +118,7 @@ function Create() {
           }
         })
     } else {
-        const text = `<b style="color: rgb(51,51,51); font-size: 13px"> All fields must not be empty! </b>`;
+        const text = `<b style="color: white; font-size: 13px"> All fields must not be empty! </b>`;
         const okay = '<b style="color: white;">Okay</b>'
         const title = `<b style="color: white;  font-family: Graphik"> Required </b>`;
       swal.fire({
