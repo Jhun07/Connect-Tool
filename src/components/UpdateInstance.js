@@ -49,7 +49,7 @@ function Update() {
 
 
 
-        Axios.put("https://vcp9rno202.execute-api.us-east-1.amazonaws.com/UpdateInstance", {
+        Axios.put("https://awscap-connect-restapi.acn-atcp.com/updateinstance", {
             InstanceAlias, Method, Origin,
 
             "CALL_RECORDINGS": {
@@ -195,7 +195,7 @@ function Update() {
                     arrayOfInvalidInputs.push(" Lambda")
                 }
                 if (dataStorage.CallRecord.includes(invalidInputs)) {
-                    arrayOfInvalidInputs.push(" Call Recordings")
+                    arrayOfInvalidInputs.push(" Call Record")
 
                 } if ((dataStorage.ChatTranscripts.includes(invalidInputs))) {
                     arrayOfInvalidInputs.push(" Chat Transcripts")
@@ -277,7 +277,8 @@ function Update() {
                     width: '60%',
 
 
-                })}
+                })
+                }
                 else if(arrayOfNoChanges){
                 const title2 = '<b style="color: white;font-size: 20px; font-family: Graphik">Your instance is not Updated. </b>'
                 const okay2 = '<b style="font-color: white;">Okay</b>'
@@ -286,7 +287,7 @@ function Update() {
                     position: 'center',
                     title: title2,
                     // text: `<b style="font-size: 13px">List of Updated:</b>`+'<br /'>+`${UpdatesFormat}`,
-                    // html: `<b style="color: white ; font-size: 15px; font-family: Graphik "> List of No Changes: </b>`+`<br/ >`+`<b style="color: white ; font-size: 15px ; font-family: Graphik ">${NoChangesFormat}</b>`+`<br />`+`<br />`,
+                    html: `<b style="color: white ; font-size: 15px; font-family: Graphik "> List of No Changes: </b>`+`<br/ >`+`<b style="color: white ; font-size: 15px ; font-family: Graphik ">${NoChangesFormat}</b>`+`<br />`+`<br />`,
                     icon: 'success',
                     confirmButtonColor: '#63b8a7',
                     confirmButtonText: okay2,

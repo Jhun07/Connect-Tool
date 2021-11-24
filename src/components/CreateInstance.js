@@ -23,7 +23,7 @@ function Create() {
     console.log(IdentityManagementType)
    
     if (InstanceAlias !== "" && IdentityManagementType !== "") {
-      Axios.post("https://vcp9rno202.execute-api.us-east-1.amazonaws.com/CreateInstance", { InstanceAlias, IdentityManagementType, Method })
+      Axios.post("https://awscap-connect-restapi.acn-atcp.com/createinstance", { InstanceAlias, IdentityManagementType, Method })
         .then((res) => {
          
           if (res.data.includes("already used")) {
