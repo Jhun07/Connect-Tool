@@ -46,6 +46,19 @@ function Update() {
 
 
 function save() {
+
+    // var data = {InstanceAlias};
+
+    //   const params = new URLSearchParams({
+    //     IdentityManagementType: IdentityManagementType,
+    //   }).toString();
+
+    //   const url =
+    //     "https://awscap-connect-restapi.acn-atcp.com/createinstance?" + params;
+
+    //   Axios.post(url, data, {
+     
+    //   })
     
     
   
