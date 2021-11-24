@@ -45,12 +45,26 @@ function Update() {
 
 
 
-    function save() {
 
+function save() {
 
+    // var data = {InstanceAlias};
 
-        Axios.put("https://awscap-connect-restapi.acn-atcp.com/updateinstance", {
-            InstanceAlias, Method, Origin,
+    //   const params = new URLSearchParams({
+    //     IdentityManagementType: IdentityManagementType,
+    //   }).toString();
+
+    //   const url =
+    //     "https://awscap-connect-restapi.acn-atcp.com/createinstance?" + params;
+
+    //   Axios.post(url, data, {
+     
+    //   })
+    
+    
+  
+      Axios.put("https://vcp9rno202.execute-api.us-east-1.amazonaws.com/UpdateInstance", {InstanceAlias,Method,Origin,
+    
 
             "CALL_RECORDINGS": {
                 "BucketName": clBucket,

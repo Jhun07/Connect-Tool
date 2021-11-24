@@ -4,185 +4,234 @@ import Axios from "axios"; //allows us to make GET and POST requests from the br
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import swal from "sweetalert2";
-import { useHistory } from 'react-router';
-
+import { useHistory } from "react-router";
 
 // import { useHistory } from "react-router-dom"; // allows us to access our path / route history.
 
 function Create() {
-   let history = useHistory(); //USE HISTORY  it will DETERMINED OUR PAST PATH.
+  let history = useHistory(); //USE HISTORY  it will DETERMINED OUR PAST PATH.
   const [InstanceAlias, setInstanceAlias] = useState("");
 
   const [IdentityManagementType, setIdentityManagementType] = useState("");
-  const Method = "Create";
-
 
   const create = () => {
+    console.log(InstanceAlias);
+    console.log(IdentityManagementType);
 
-    console.log(InstanceAlias)
-    console.log(IdentityManagementType)
-   
     if (InstanceAlias !== "" && IdentityManagementType !== "") {
-      Axios.post("https://awscap-connect-restapi.acn-atcp.com/createinstance", { InstanceAlias, IdentityManagementType, Method })
-        .then((res) => {
-         
-          if (res.data.includes("already used")) {
-            const okay = '<b style="color: white;">Okay</b>'
-            const title = `<b style="color: white; font-family: Graphik"> Oopss </b>`;
-            swal.fire({
-                title: title,
-                html: `<b style="color:white; font-size: 13px"> Instance alias is already used!  </b>`+`<b style="color: white; font-size: 13px"> Do you want to update this Instance?  </b>`,
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#63b8a7',
-                confirmButtonText: okay,
-                cancelButtonText: 'cancel',
-                cancelButtonColor: '#d33',
-                background: '#4686c8',
-              }).then((result) => {
-                if (result.isConfirmed) {
-                  localStorage.setItem("updatedInstance", "next step")
-                  swal.fire({
-                   title:`<b style="color:white; font-size: 13px"> You may now proceed to step 2  </b>`,
-                    html:`<b style="color:white; font-size: 13px"> Update your instance  </b>`,
-                    icon:'success',
-                    background: '#4686c8',
-                  })
-                history.push("/updateInstance")
-                }else{
-                  swal.fire({
-                    html:`<b style="color:white; font-size: 13px">Cancelled </b>`,
-                    icon:'cancel',
-                    background: '#4686c8',
-                     
-                  })
-                }
-              })
-            console.log(res.data)
+      var data = {InstanceAlias};
 
-          } else if (res.data.includes("successfully created")) {
+      const params = new URLSearchParams({
+        IdentityManagementType: IdentityManagementType,
+      }).toString();
 
-            const response = res.data.split("*");
-            const getInstanceIDOnly = response[1];
-            console.log(getInstanceIDOnly)
-            
-            const title = `<b style="color: white; font-family: Graphik "> Your instance is successfully created!</b>`; 
-            const okay = '<b style="color: white;">Okay</b>'
+      const url =
+        "https://awscap-connect-restapi.acn-atcp.com/createinstance?" + params;
 
+      Axios.post(url, data, {
+     
+      })
 
-            swal.fire({
+      .then((res) => {
+        if (res.data.includes("already used")) {
+          const okay = '<b style="color: white;">Okay</b>';
+          const title = `<b style="color: white; font-family: Graphik"> Oopss </b>`;
+          swal
+            .fire({
               title: title,
-              html: `<b style="color: black ; font-size: 15px; font-family: Graphik "> Instance ID: </b>`+ `<b style="color: white ; font-size: 15px ; font-family: Graphik ">${getInstanceIDOnly}</b>`+`<br />`+`<br /><b style="color: white ; font-size: 15px; font-family: Graphik ">Do you want to proceed to Step 2 to update this instance?</b>`,
-              type: 'success',
+              html:
+                `<b style="color:white; font-size: 13px"> Instance alias is already used!  </b>` +
+                `<b style="color: white; font-size: 13px"> Do you want to update this Instance?  </b>`,
+              icon: "warning",
               showCancelButton: true,
-              confirmButtonColor: '#63b8a7',
-              cancelButtonColor: '#d33',
-              confirmButtonText: 'Yes',
-              cancelButtonText: 'cancel',
-              background: '#4686c8',
-            }).then((result) => {
-              
-              if (result.isConfirmed) {
-                localStorage.setItem("createdInstance", "next step")
-                swal.fire({
-                  title:`<b style="color:white; font-size: 20px"> Thank You  </b>`,
-                    html:`<b style="color:white; font-size: 13px"> You may now update your instance  </b>`,
-                    icon:'success',
-                    background: '#4686c8',
-
-                })
-              }else{
-                swal.fire(
-                  'Cancelled',
-          
-                )
-              }
-            })
-            
-
-          }
-          
-          else if (res.data.includes("Quota limit reached")) {
-            const title = `<b style="color: white; font-family: Graphik"> Limit reached. </b>`;
-            const okay = '<b style="color: white;">Okay</b>';
-            
-            swal.fire({
-              title: title,
-              html: `<b style="color: white; font-size: 13px"> Quota limit reached for number of instance! </b>`,
-              icon: 'warning',
-              confirmButtonColor: '#63b8a7',
+              confirmButtonColor: "#63b8a7",
               confirmButtonText: okay,
-              background: '#4686c8',
+              cancelButtonText: "cancel",
+              cancelButtonColor: "#d33",
+              background: "#4686c8",
             })
-           
-          }
-        })
+            .then((result) => {
+              if (result.isConfirmed) {
+                localStorage.setItem("updatedInstance", "next step");
+                swal.fire({
+                  title: `<b style="color:white; font-size: 13px"> You may now proceed to step 2  </b>`,
+                  html: `<b style="color:white; font-size: 13px"> Update your instance  </b>`,
+                  icon: "success",
+                  background: "#4686c8",
+                });
+                history.push("/updateInstance");
+              } else {
+                swal.fire({
+                  html: `<b style="color:white; font-size: 13px">Cancelled </b>`,
+                  icon: "cancel",
+                  background: "#4686c8",
+                });
+              }
+            });
+          console.log(res.data);
+        } else if (res.data.includes("successfully created")) {
+          const response = res.data.split("*");
+          const getInstanceIDOnly = response[1];
+          console.log(getInstanceIDOnly);
+
+          const title = `<b style="color: white; font-family: Graphik "> Your instance is successfully created!</b>`;
+          const okay = '<b style="color: white;">Okay</b>';
+
+          swal
+            .fire({
+              title: title,
+              html:
+                `<b style="color: black ; font-size: 15px; font-family: Graphik "> Instance ID: </b>` +
+                `<b style="color: white ; font-size: 15px ; font-family: Graphik ">${getInstanceIDOnly}</b>` +
+                `<br />` +
+                `<br /><b style="color: white ; font-size: 15px; font-family: Graphik ">Do you want to proceed to Step 2 to update this instance?</b>`,
+              type: "success",
+              showCancelButton: true,
+              confirmButtonColor: "#63b8a7",
+              cancelButtonColor: "#d33",
+              confirmButtonText: "Yes",
+              cancelButtonText: "cancel",
+              background: "#4686c8",
+            })
+            .then((result) => {
+              if (result.isConfirmed) {
+                localStorage.setItem("createdInstance", "next step");
+                swal.fire({
+                  title: `<b style="color:white; font-size: 20px"> Thank You  </b>`,
+                  html: `<b style="color:white; font-size: 13px"> You may now update your instance  </b>`,
+                  icon: "success",
+                  background: "#4686c8",
+                });
+              } else {
+                swal.fire("Cancelled");
+              }
+            });
+        } else if (res.data.includes("Quota limit reached")) {
+          const title = `<b style="color: white; font-family: Graphik"> Limit reached. </b>`;
+          const okay = '<b style="color: white;">Okay</b>';
+
+          swal.fire({
+            title: title,
+            html: `<b style="color: white; font-size: 13px"> Quota limit reached for number of instance! </b>`,
+            icon: "warning",
+            confirmButtonColor: "#63b8a7",
+            confirmButtonText: okay,
+            background: "#4686c8",
+          });
+        }
+      });
     } else {
-        const text = `<b style="color: white; font-size: 13px"> All fields must not be empty! </b>`;
-        const okay = '<b style="color: white;">Okay</b>'
-        const title = `<b style="color: white;  font-family: Graphik"> Required </b>`;
+      const text = `<b style="color: white; font-size: 13px"> All fields must not be empty! </b>`;
+      const okay = '<b style="color: white;">Okay</b>';
+      const title = `<b style="color: white;  font-family: Graphik"> Required </b>`;
       swal.fire({
         title: title,
         html: text,
-        icon: 'warning',
-        confirmButtonColor: '#63b8a7',
+        icon: "warning",
+        confirmButtonColor: "#63b8a7",
         customClass: "Custom_Cancel",
         confirmButtonText: okay,
-        background: '#4686c8',
-      })
+        background: "#4686c8",
+      });
     }
   };
 
   return (
     <>
-     <div>
-       <br></br>
-       <a href="/createInstance"><button className="custom-btn btn-3 bg-primary" id="createbtn"><span>Create Instance</span></button></a>
-            <a href="/updateInstance"> <button className="custom-btn btn-3" id="updatedesign"><span>Update Instance</span></button></a>
-   
-      <br/><br/>
-      <form className="create-form">
+      <div>
+        <br></br>
+        <a href="/createInstance">
+          <button className="custom-btn btn-3 bg-primary" id="createbtn">
+            <span>Create Instance</span>
+          </button>
+        </a>
+        <a href="/updateInstance">
+          {" "}
+          <button className="custom-btn btn-3" id="updatedesign">
+            <span>Update Instance</span>
+          </button>
+        </a>
 
-      <div className="form-group row">
-        <label htmlFor="inputPassword" className="col-sm-2 col-form-label" id="InstanceNameLabel"  >Instance Name &nbsp;➤</label>
-        <div className="col-sm-6">
-          <input type="text" className="form-control" id="inputInstanceName"  onChange={(event) => {
+        <br />
+        <br />
+        <form className="create-form">
+          <div className="form-group row">
+            <label
+              htmlFor="inputPassword"
+              className="col-sm-2 col-form-label"
+              id="InstanceNameLabel"
+            >
+              Instance Name &nbsp;➤
+            </label>
+            <div className="col-sm-6">
+              <input
+                type="text"
+                className="form-control"
+                id="inputInstanceName"
+                onChange={(event) => {
                   setInstanceAlias(event.target.value);
-                }}/>
-        </div>
-      </div>
+                }}
+              />
+            </div>
+          </div>
 
-    <br/><br/>
+          <br />
+          <br />
 
-    <label id="IMType">Identity Management Type &nbsp; ➤ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-
-    <input type="radio" id="saml" name="fav_language" value="SAML" onChange={(event) => {
+          <label id="IMType">
+            Identity Management Type &nbsp; ➤
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input
+              type="radio"
+              id="saml"
+              name="fav_language"
+              value="SAML"
+              onChange={(event) => {
                 setIdentityManagementType(event.target.value);
-              }}/>&nbsp;&nbsp;
-
-    <label for="saml" className="saml">SAML</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-    <input type="radio" id="saml" name="fav_language" value="ACM"  onChange={(event) => {
+              }}
+            />
+            &nbsp;&nbsp;
+            <label for="saml" className="saml">
+              SAML
+            </label>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input
+              type="radio"
+              id="saml"
+              name="fav_language"
+              value="ACM"
+              onChange={(event) => {
                 setIdentityManagementType(event.target.value);
-              }}/>&nbsp;&nbsp;
-
-    <label for="saml">Amazon Connect Manage</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-    <input type="radio" id="saml" name="fav_language" value="SAML" onChange={(event) => {
+              }}
+            />
+            &nbsp;&nbsp;
+            <label for="saml">Amazon Connect Manage</label>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input
+              type="radio"
+              id="saml"
+              name="fav_language"
+              value="SAML"
+              onChange={(event) => {
                 setIdentityManagementType(event.target.value);
-              }}/>&nbsp;&nbsp;
+              }}
+            />
+            &nbsp;&nbsp;
+            <label for="saml">Link to existing directory</label>&nbsp;&nbsp;
+          </label>
+          <br />
+          <br />
 
-    <label for="saml">Link to existing directory</label>&nbsp;&nbsp;
-
-    </label><br/><br/>
-
-    <button type="button"  id="CreateIntanceButton" className="btn btn-primary custom-btn btn-3 " onClick={create}>
-    <span>Create</span></button>
-
-  </form>
-  <div className="extraimg"></div>
-  
+          <button
+            type="button"
+            id="CreateIntanceButton"
+            className="btn btn-primary custom-btn btn-3 "
+            onClick={create}
+          >
+            <span>Create</span>
+          </button>
+        </form>
+        <div className="extraimg"></div>
       </div>
     </>
   );
