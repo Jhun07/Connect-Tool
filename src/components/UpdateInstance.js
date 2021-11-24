@@ -80,6 +80,7 @@ function save() {
       "Lambda":[
         Lambda
       ]
+    
         
     
 
@@ -87,6 +88,7 @@ function save() {
   
     )
       .then((res)=>{
+
      
         const idx = 0; // add the index for which you want value
         var key = Object.keys(res.data)[idx];
@@ -138,7 +140,9 @@ function save() {
         Swal.fire({
           title: title,
            html:  `
-        
+           <b style="color: white">Successfully updated:</b> <br />
+           <b style="color: white">No changes:</b>
+           
            <table id="table" border=1>
        
            <tbody>
